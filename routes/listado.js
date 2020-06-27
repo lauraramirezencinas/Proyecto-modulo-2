@@ -5,7 +5,7 @@ const Restaurante = require('../models/modelo-restaurante');
 const Menu = require('../models/modelo-menu');
 const Categoria = require('../models/modelo-categoria');
 const ElementoMenu = require('../models/modelo-elemento-menu');
-const async = require('async')
+
 
 //RUTA DE LISTADO PARA BUSQUEDA
 // router.get('/listado', async (req, res, next) => {
