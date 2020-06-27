@@ -347,3 +347,26 @@ text-align: center;
 .errormsg {
   text-align: center;
 }
+
+//código QR
+
+#generarCodigo{
+  width: 10%;
+  background-color: #5AA1E3;
+  color: #fff;
+}
+#descargarCodigo{
+  width: 10%;
+  background-color: #3CB371;
+  color: #fff;
+  display: none;
+  text-align: center;
+  border: #eee solid 2px;
+  text-decoration: none;
+}
+#codigoQR{
+  width: 256px;
+  height: 256px;
+  margin-top: 25px;
+  border: 2px solid #eee;
+}

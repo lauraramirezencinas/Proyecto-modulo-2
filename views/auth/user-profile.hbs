@@ -3,8 +3,8 @@
 <h2 class="Title">Bienvenido {{usuario.nombre}}</h2>
 <!-- FORMULARIO DE CREACION DE RESTAURANTE -->
 <div>
-  <button id="addRestaurantButton" class="addRestaurante" data-toggle="modal"
-    data-target="#exampleModal1">Añade un nuevo Restaurante</button>
+  <button id="addRestaurantButton" class="addRestaurante" data-toggle="modal" data-target="#exampleModal1">Añade un
+    nuevo Restaurante</button>
 </div>
 <div class="container">
 
@@ -43,7 +43,7 @@
   {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
 
-<!-- CARD RESTAURANTE -->
+  <!-- CARD RESTAURANTE -->
   <div class="row">
 
     {{#each restaurante}}
@@ -56,6 +56,12 @@
               class="numero-text">{{this.direccion.numero}}</span></p>
           <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
           <p><b>PIN:</b> {{this.pin}}</p>
+          <input class="item" type="hidden" value="http://localhost:3000/{{this.pin}}">
+          <button class="generarCodigo hidden">Generar Código QR</button>
+          <img class="qr-img hidden">
+          <br>
+          <a href="#" class="descargarCodigo">Descargar</a>
+          <br>
           <a href="/restaurante/{{this.id}}" class="btn btn-primary">Añadir Menu</a>
           <input class="id-editar hidden" value="{{this.id}}">
           <button class="btn button-name-editar" data-toggle="modal" data-target="#exampleModal"><i
@@ -71,7 +77,7 @@
     {{/each}}
 
   </div>
-<!--
+  <!--
   <div>
     <img id="socialDistance" src="/images/distanciamiento-social-restaurante_23-2148545623.jpg" alt="Restaurante">
   </div>
