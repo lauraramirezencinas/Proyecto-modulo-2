@@ -19,8 +19,10 @@
         <input type="text" id="elementoMenu" name="nombre">
         <br>
         <br>
+        {{#if isCarta}}
         <label for="" id="price-element"><b> Precio</b></label>
         <input type="text" id="precio" name="precio">
+        {{/if}}
         <input type="hidden" id="categoria" name="idCategoria" value="{{this.categoria.id}}">
         <br>
         <br>
@@ -44,8 +46,10 @@
         <form action='/elemento/{{this.id}}/editar' method="POST">
             <input type="text" id="edit-element" class="input-edit-elemento hidden" name="nombre"
                 value="{{this.nombre}}">
+            {{#if isCarta}}
             <input type="text" id="edit-precio" class="input-edit-element-precio hidden" name="precio"
                 value="{{this.precio}}">
+            {{/if}}
             <button type="submit" class="btn btn-primary editar-elemento hidden">Guardar</button>
         </form>
 
