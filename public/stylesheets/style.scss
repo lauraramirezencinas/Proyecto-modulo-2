@@ -7,7 +7,8 @@ a {
 
   //HOME PAGE
 }
-#boton-logout{
+
+#boton-logout {
   border: none;
   background-color: #080808;
   color: white;
@@ -16,8 +17,8 @@ a {
   outline: none;
 }
 
-.navbar{
-  border-radius:0px!important;
+.navbar {
+  border-radius: 0px !important;
 }
 
 .Title {
@@ -29,23 +30,27 @@ a {
   padding: 1%;
   border-radius: 15px;
 }
+
 .intro {
   text-align: center;
   margin-bottom: 60px;
 }
-.pinSearch{
-  width: 100% ;
+
+.pinSearch {
+  width: 100%;
   text-align: center;
   margin-bottom: 60px;
 }
+
 #homeContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
- 
-  
+
+
 }
+
 .homeCard {
   font-size: 80%;
   text-align: center;
@@ -55,18 +60,22 @@ a {
   border-radius: 15px;
   margin-bottom: 2%;
 }
-footer{
-  
+
+footer {
+
   bottom: 0;
   width: 100%;
   color: white;
   background-color: #222;
-  padding:1% ;
+  padding: 1%;
   border-radius: 15px;
+  text-align: center;
 }
+
 .cardImg {
   width: 40%;
 }
+
 #irMenu {
   border-radius: 15px;
   color: white;
@@ -74,6 +83,7 @@ footer{
   border: none;
   padding: 7px;
 }
+
 #pin {
   border-radius: 15px;
   text-align: center;
@@ -90,10 +100,11 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   padding: 2%;
   border-radius: 15px;
 }
+
 .signupElement {
   font-size: larger;
   width: 30%;
@@ -101,13 +112,14 @@ footer{
   margin-bottom: 5px;
   border-radius: 15px;
   padding: 7px;
- 
+
 }
+
 .Button {
   margin-top: 2%;
   width: 30%;
   color: white;
-  background-color:#222;
+  background-color: #222;
   border-radius: 15px;
   padding: 7px;
 }
@@ -120,6 +132,7 @@ footer{
   flex-direction: column;
   align-items: center;
 }
+
 .loginElement {
   font-size: larger;
   width: 30%;
@@ -137,40 +150,72 @@ footer{
   flex-direction: column;
   align-items: center;
 }
+
 .profileElement {
   font-size: larger;
-  width: 30%; 
+  width: 30%;
   text-align: center;
   margin-bottom: 5px;
 }
+
 .card {
-  text-align: center  ;
+  text-align: center;
 }
 
 #saveRestaurantButton {
   color: white;
   background-color: cornflowerblue;
 }
+
 #addRestaurantButton {
   color: white;
   background-color: cornflowerblue;
 }
+
 #socialDistance {
-width: 30%;
-height: auto;  
-position:absolute;
-bottom:10px;
-right:20px
+  width: 30%;
+  height: auto;
+  position: absolute;
+  bottom: 10px;
+  right: 20px
 }
+
 #addRestaurantButton {
   margin-top: 2%;
   width: 30%;
   color: white;
-  background-color:#222;
+  background-color: #222;
   border-radius: 15px;
   padding: 7px;
   display: block;
   margin: auto;
+}
+// EDIT RESTAURANT POP UP
+.modal-title {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 30px;
+  padding: 2%;
+  border-radius: 15px;
+}
+#saveRestaurantButton {
+  background-color: #222;
+  color: white;
+  border-radius: 15px;
+  width: 50%;
+}
+#popUp-button {
+  background-color: #222;
+  color: white;
+  border-radius: 15px;
+  width: 50%;
+  
+}
+.profileElement {
+  width: 50%;
+  border-radius: 15px;
+  padding: 1%;
 }
 
 
@@ -181,6 +226,7 @@ right:20px
   background-color: cornflowerblue;
   margin-bottom: 60px;
 }
+
 .subTitle {
   width: 100%;
   text-align: center;
@@ -188,41 +234,48 @@ right:20px
   margin-bottom: 30px;
   padding: 1%;
   border-radius: 15px;
-} 
+}
+
 #creaMenu-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .creaMenuElement {
   font-size: larger;
-  width: 30%; 
+  width: 30%;
   text-align: center;
   margin-bottom: 15px;
 }
+
 #menu-listing {
   text-align: right;
   list-style: none;
   background-color: cornflowerblue;
   border-radius: 15px;
   padding: 1%;
-  
+
 }
+
 #listing-container {
   width: 50%;
   text-align: center;
 }
+
 .crudOpsContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 1%;
-  
+
 }
+
 #crudElement {
   margin-right: 2%;
 }
+
 .deleteButton {
   border-radius: 15px;
   color: white;
@@ -230,9 +283,11 @@ right:20px
   border: none;
   padding: 7px;
 }
+
 #menuName {
   margin-right: 20px;
 }
+
 .editLink {
   margin-right: 10px;
   margin-bottom: 15px;
@@ -245,9 +300,11 @@ right:20px
   background-color: cornflowerblue;
   margin-bottom: 60px;
 }
+
 #editName {
-text-align: center;
+  text-align: center;
 }
+
 #editElementPrice {
   text-align: center;
   margin-bottom: 3%;
@@ -256,24 +313,28 @@ text-align: center;
 #element-listing {
   text-align: center;
   list-style: none;
-  margin-bottom:8%;
+  margin-bottom: 8%;
 }
+
 .subTitle {
   text-align: center;
   margin-bottom: 3%;
 }
-#menuCreate{
+
+#menuCreate {
   text-align: center;
   margin-bottom: 3%;
 }
 
-#price-element{
+#price-element {
   margin-right: 20px;
 }
+
 #backLink {
-  
+
   text-align: center;
 }
+
 .button {
   border-radius: 15px;
   color: white;
@@ -286,18 +347,22 @@ text-align: center;
 .container {
   width: 100%;
 }
+
 #displayMenu-Title {
   text-align: center;
   width: 100%;
   background-color: cornflowerblue;
 }
+
 .menu-name {
   width: 100%;
   color: white;
-  background-color:#222;
- padding: 20px;
- border: none;
+  background-color: #222;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
 }
+
 #prize {
   text-align: end
 }
@@ -306,31 +371,38 @@ text-align: center;
 #menu-especial {
   width: 100%;
   color: white;
-  background-color:#222;
- padding: 20px;
- border: none;
- margin-bottom: 20px;
+  background-color: #222;
+  padding: 20px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+.menu-container {
+  text-align: center;
 }
 
-.labelPrecio{
+.labelPrecio {
   display: none;
 }
 
-.labelNombreMenu{
-  display: none;
-}
-.labelInfoMenu{
+.labelNombreMenu {
   display: none;
 }
 
-.listaMenu{
+.labelInfoMenu {
+  display: none;
+}
+
+.listaMenu {
   margin-top: 25px;
 }
+
 #logoMenuDisplay {
   display: block;
- margin:auto;
- margin-bottom: 2%;
+  margin: auto;
+  margin-bottom: 2%;
 }
+
 //ERRORES
 #errorMessage {
   margin-top: 20px;
@@ -341,16 +413,19 @@ text-align: center;
   text-align: center;
   color: white;
 }
+
 #errorImg {
   display: block;
   margin: auto;
   width: 50%;
 }
+
 #notFoundImg {
   display: block;
   margin: auto;
   width: 50%;
 }
+
 .errormsg {
   text-align: center;
 }
@@ -359,97 +434,115 @@ text-align: center;
 //MEDIA QUERYS
 
 //Mobile
-@media (max-width: 425px) { 
+@media (max-width: 425px) {
 
- //HOME
- .Title {
-   padding: 5%;
- }
+  //HOME
+  .Title {
+    padding: 5%;
+  }
+
   #homeContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .homeCard {
     width: 90%;
     margin-bottom: 4%;
     font-size: 5vw;
   }
+
   .irMenu {
     margin-top: 5%;
     width: 50%;
   }
 
-//LOGIN 
-.loginElement {
-  width: 80%;
+  //LOGIN 
+  .loginElement {
+    width: 80%;
+  }
+
+  .Button {
+    width: 80%;
+  }
+
+  #errorMessage {
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+  }
+
+  //SIGNUP
+  .signupElement {
+    width: 80%;
+  }
+
+  //USER-PROFILE
+  #addRestaurantButton {
+    width: 80%;
+  }
+
+  //ERROR
+  #errorImg {
+    width: 100%;
+  }
+
+  //NOTFOUND
+  #notFoundImg {
+    width: 100%;
+  }
 }
-.Button {
-  width: 80%;
-}
-#errorMessage {
-  width: 80%;
-  display: block;
-  margin: auto;
-  margin-top: 5%;
-}
-//SIGNUP
-.signupElement {
-  width: 80%;
-}
-//USER-PROFILE
-#addRestaurantButton {
-  width: 80%;
-}
-//ERROR
-#errorImg {
-  width: 100%;
-}
-//NOTFOUND
-#notFoundImg {
-  width:100%;
-}
-}
+
 //TABLET
 
-@media (min-width: 426px) and (max-width: 768px) { 
+@media (min-width: 426px) and (max-width: 768px) {
+
   //HOME
   .homeCard {
     font-size: 2vw;
     margin-bottom: 4%;
   }
+
   .irMenu {
     margin-top: 5%;
     width: 25%;
   }
+
   .Title {
-    padding:3%;
+    padding: 3%;
   }
 
   //LOGIN
   .loginElement {
     width: 50%;
   }
+
   .Button {
     width: 50%;
   }
+
   //SIGNUP
-.signupElement {
-  width: 50%;
-}
-#errorMessage {
-  width: 50%;
-  display: block;
-  margin: auto;
-  margin-top: 5%;
-}
-//ERROR
-#errorImg {
-  width: 100%;
-}
-//NOTFOUND
-#notFoundImg {
-  width:100%;
-}
+  .signupElement {
+    width: 50%;
+  }
+
+  #errorMessage {
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+  }
+
+  //ERROR
+  #errorImg {
+    width: 100%;
+  }
+
+  //NOTFOUND
+  #notFoundImg {
+    width: 100%;
+  }
 
 }

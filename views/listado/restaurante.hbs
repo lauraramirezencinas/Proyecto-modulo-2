@@ -1,10 +1,11 @@
 <div class="container">
-
+<!--TITULO -->
   <h1 class="Title">{{restaurante.nombre}}</h1>
+<!--LOGO -->
   <img id="logoMenuDisplay" src="{{restaurante.logoUrl}}">
   {{#each menus}}
 
-
+<!--CARTA -->
   {{#if this.isCarta}}
   {{#each this.categorias}}
   <div class="menu-page">
@@ -23,7 +24,7 @@
   {{/each}}
 
   {{else}}
-  
+  <!--MENU ESPECIAL -->
   <button  id="menu-especial">{{this.nombre}} </button>
  
   
