@@ -1,4 +1,4 @@
- {{> navBarPartial}}
+{{> navBarPartial}}
 
 
 <!-- TITULO-->
@@ -6,10 +6,16 @@
 
 <!-- FORM PIN-->
 <div class="pinSearch">
-    <label  for="input-password">Busca por pin</label>
-    <input  type="text" class="pinInput" id="pin" name="pin" placeholder="****" />
-    <button  class="irMenu" id="irMenu">IR AL MENU</button>
+    <label for="input-password">Busca por pin</label>
+    <input type="number" class="pinInput" id="pin" name="pin" placeholder="****" />
+    <button class="irMenu" id="irMenu">IR AL MENU</button>
+    {{#if errorMessage}}
+        <p class="text-danger"><b> {{errorMessage}}</b></p>
+    {{/if}}
+
 </div>
+
+
 
 
 <!-- INTRO-->
@@ -24,7 +30,7 @@
             <p>Registrate como usuario y añade tu local</p>
         </div>
         <div class="homeCard">
-            <img class="cardImg" src="/images/diario.png" alt="menu">
+            <img class="cardImg" src="images/diario.png" alt="menu">
             <h3>Introduce tu menú</h3>
             <p>Introduce tus menús y muestralos a tus clientes desde la comodidad de su móvil y de forma 100% higienica,
                 sin pagina web requerida!</p>
@@ -32,10 +38,12 @@
         <div class="homeCard">
             <img class="cardImg" src="/images/telefono.png" alt="busqueda">
             <h3>Muestra tu Menú</h3>
-            <p>Tus clientes podrán visualizar tu menú a traves del pin facilitado por la aplicación. Mantén tu menú siempre actualizado en pocos pasos!</p>
+            <p>Tus clientes podrán visualizar tu menú a traves del pin facilitado por la aplicación. Mantén tu menú
+                siempre actualizado en pocos pasos!</p>
         </div>
     </div>
 </div>
+
 <!-- FOOTER -->
 <footer>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a
         href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a></footer>

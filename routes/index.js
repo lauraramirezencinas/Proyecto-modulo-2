@@ -10,6 +10,10 @@ const Restaurante = require('../models/modelo-restaurante');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+  if(req.query.error){
+
+    res.render('index',{errorMessage: req.query.error})
+  }
   res.render('index');
 });
 //Get user-profile

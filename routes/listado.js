@@ -5,7 +5,7 @@ const Restaurante = require('../models/modelo-restaurante');
 const Menu = require('../models/modelo-menu');
 const Categoria = require('../models/modelo-categoria');
 const ElementoMenu = require('../models/modelo-elemento-menu');
-const async = require('async')
+
 
 //RUTA DE LISTADO PARA BUSQUEDA
 // router.get('/listado', async (req, res, next) => {
@@ -22,6 +22,9 @@ const async = require('async')
 router.get('/:pin', async (req, res, next) => {
   try {
     const restaurante = await Restaurante.findOne({ pin: req.params.pin });
+    if(restaurante == null){
+      res.redirect('/?error=Este Pin no existe')
+    }
     let menus_no = await Menu.find({ idRestaurante: restaurante._id });
     let menus = menus_no.sort(function(a,b){
         if (a.tipoDeMenu==="carta"){

@@ -8,9 +8,14 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+
 //Conexion bases de datos
 mongoose
-  .connect('mongodb://localhost/proyectomodulo2', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -44,11 +49,11 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
       
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
 
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
 hbs.registerPartials(__dirname + 'views/partials');
