@@ -54,7 +54,7 @@ router.post("/signup", async (req, res, next) => {
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
     const usuario = await Usuario.create({ nombre: nombre, email: email, passwordHash: hashedPassword })
-    req.session.currentUser= usuario;
+    req.session.currentUser = usuario;
     let transporter = await nodemailer.createTransport({
       host: "smtp.eu.mailgun.org",
       port: 25,
@@ -65,13 +65,19 @@ router.post("/signup", async (req, res, next) => {
     });
     transporter.sendMail({
       from: 'info@my-menu.site',
-      to: email, 
-      subject: "¡Bienvenido a MyMenu!", 
-      text: `Hola ${nombre}`,
+      to: email,
+      subject: "¡Bienvenido a MyMenu!",
+      html: `<h2><b>Hola</b> ${nombre}, </h1>
+    <h3>Bienvenido a MyMenu</h3>
+    <br/>
+    <p>Una aplicación donde podrás introducir tu carta o menú del dia.</p>
+    <br/>
+    <p>Y todos tus clientes la verán desde su móvil.</p>
+    <img src="https://i2.wp.com/www.diegocoquillat.com/wp-content/uploads/2011/11/15-usos-de-c%C3%B3digos-QR-para-un-restaurante.jpg?fit=702%2C336&ssl=1"/>`
     });
-    
+
     res.redirect("/user-Profile")
-  }catch(error){
+  } catch (error) {
     if (error instanceof mongoose.Error.ValidationError) {
       res.status(400).render('auth/signup', {
         errorMessage: "Formato de email inválido, intentelo de nuevo."
