@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const saltRounds = 10
@@ -5,7 +6,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const session = require('express-session');
 const nodemailer = require('nodemailer');
-const mg = require('nodemailer-mailgun-transport');
+const passport = require('passport');
 const Usuario = require('../models/modelo-usuario');
 const Restaurante = require('../models/modelo-restaurante');
 
@@ -21,9 +22,9 @@ router.get('/', (req, res, next) => {
 //Get user-profile
 router.get("/user-Profile", async (req, res) => {
   try {
-    const usuario = await Usuario.find({ userId: req.session.currentUser });
+    const usuario = await Usuario.findOne({ _id: req.session.currentUser });
     const restaurante = await Restaurante.find({ userId: req.session.currentUser });
-    res.render("auth/user-profile", { usuario: req.session.currentUser, restaurante: restaurante })
+    res.render("auth/user-profile", { usuario: usuario, restaurante: restaurante })
   } catch (err) {
     next(err)
   }
@@ -122,11 +123,28 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
+//Ruta google
+router.get("/auth/google", passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  })
+);
+router.get("/auth/google/callback",passport.authenticate("google", {
+  successRedirect: "/user-profile",
+  failureRedirect: "/" // hacia dónde debe ir si falla?
+
+})
+);
+
+
 //Ruta POST logout
 router.post('/logout', (req, res, next) => {
   req.session.destroy();
   console.log(session)
   res.redirect('/');
 });
+
 
 module.exports = router;
