@@ -2,17 +2,18 @@
 
 
 <!-- TITULO-->
-<h1 class="Title">Bienvenido a {{title}}</h1>
+<h1 class="Title"><b> Bienvenido a {{title}}</b></h1>
 
 <!-- FORM PIN-->
 <div class="pinSearch">
     <label for="input-password">Busca por pin</label>
     <input type="number" class="pinInput" id="pin" name="pin" placeholder="****" />
-    <button class="irMenu" id="irMenu">IR AL MENU</button>
     {{#if errorMessage}}
-        <p class="text-danger"><b> {{errorMessage}}</b></p>
+        <p id="errorMessage"><b> {{errorMessage}}</b></p>
     {{/if}}
 
+    <button class="irMenu" id="irMenu">IR AL MENU</button>
+    
 </div>
 
 
@@ -26,18 +27,18 @@
     <div id="homeContainer">
         <div class="homeCard">
             <img class="cardImg" src="/images/formulario.png" alt="registro">
-            <h3>Registrate!</h3>
+            <h3><b> Registrate!</b></h3>
             <p>Registrate como usuario y añade tu local</p>
         </div>
         <div class="homeCard">
             <img class="cardImg" src="images/diario.png" alt="menu">
-            <h3>Introduce tu menú</h3>
+            <h3><b> Introduce tu menú</b></h3>
             <p>Introduce tus menús y muestralos a tus clientes desde la comodidad de su móvil y de forma 100% higienica,
                 sin pagina web requerida!</p>
         </div>
         <div class="homeCard">
             <img class="cardImg" src="/images/telefono.png" alt="busqueda">
-            <h3>Muestra tu Menú</h3>
+            <h3><b> Muestra tu Menú</b></h3>
             <p>Tus clientes podrán visualizar tu menú a traves del pin facilitado por la aplicación. Mantén tu menú
                 siempre actualizado en pocos pasos!</p>
         </div>

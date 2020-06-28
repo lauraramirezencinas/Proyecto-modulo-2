@@ -12,15 +12,16 @@
 
     <label class="signupElement" for="input-password">Contraseña</label>
     <input class="signupElement" type="password" name="password" id="input-password" placeholder="********" />
-
-    <button class="Button" class="signupElement" type="submit">Crear cuenta</button>
-
-    {{!-- error message will be added here --}}
+       {{!-- error message will be added here --}}
   {{#if errorMessage}}
     <div id="errorMessage">
       <p class="error"><b> {{errorMessage}}</b></p>
     </div>
     {{/if}}
+
+    <button class="Button" class="signupElement" type="submit">Crear cuenta</button>
+
+ 
 
   </form>
 </div>
