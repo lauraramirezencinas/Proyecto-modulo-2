@@ -48,7 +48,6 @@ a {
   margin-bottom: 2%; }
 
 footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
   color: white;
@@ -342,6 +341,31 @@ footer {
     width: 80%; }
   #addRestaurantButton {
     width: 80%; }
+  #errorImg {
+    width: 100%; }
+  #notFoundImg {
+    width: 100%; } }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .homeCard {
+    font-size: 2vw;
+    margin-bottom: 4%; }
+  .irMenu {
+    margin-top: 5%;
+    width: 25%; }
+  .Title {
+    padding: 3%; }
+  .loginElement {
+    width: 50%; }
+  .Button {
+    width: 50%; }
+  .signupElement {
+    width: 50%; }
+  #errorMessage {
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 5%; }
   #errorImg {
     width: 100%; }
   #notFoundImg {
