@@ -59,8 +59,8 @@ router.post("/signup", async (req, res, next) => {
       host: "smtp.eu.mailgun.org",
       port: 25,
       auth: {
-        user: 'postmaster@mg.my-menu.site',
-        pass: '2f3ca54764c51d7eb0576ad48bbbb566-468bde97-5eefef15'
+        user: process.env.USER,
+        pass: process.env.PASS
       },
     });
     transporter.sendMail({
