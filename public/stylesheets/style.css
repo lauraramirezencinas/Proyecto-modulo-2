@@ -32,11 +32,6 @@ a {
   text-align: center;
   margin-bottom: 60px; }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
-
 #homeContainer {
   width: 100%;
   display: flex;
@@ -131,10 +126,6 @@ footer {
 .card {
   text-align: center; }
 
-#cardLogo {
-  max-width: 80%;
-  height: auto; }
-
 #saveRestaurantButton {
   color: white;
   background-color: cornflowerblue; }
@@ -185,6 +176,13 @@ footer {
   width: 30%;
   text-align: center;
   margin-bottom: 15px; }
+
+#menu-listing {
+  text-align: right;
+  list-style: none;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding: 1%; }
 
 #listing-container {
   width: 50%;
@@ -252,6 +250,9 @@ footer {
   border: none;
   padding: 7px; }
 
+.container {
+  width: 100%; }
+
 #displayMenu-Title {
   text-align: center;
   width: 100%;
@@ -266,6 +267,14 @@ footer {
 
 #prize {
   text-align: end; }
+
+#menu-especial {
+  width: 100%;
+  color: white;
+  background-color: #222;
+  padding: 20px;
+  border: none;
+  margin-bottom: 20px; }
 
 .labelPrecio {
   display: none; }
@@ -283,14 +292,6 @@ footer {
   display: block;
   margin: auto;
   margin-bottom: 2%; }
-
-#menu-especial {
-  margin-bottom: 20px;
-  width: 100%;
-  color: white;
-  background-color: #222;
-  padding: 20px;
-  border: none; }
 
 #errorMessage {
   margin-top: 20px;
@@ -314,24 +315,36 @@ footer {
 .errormsg {
   text-align: center; }
 
-#generarCodigo {
-  width: 10%;
-  background-color: #5AA1E3;
-  color: #fff; }
-
-#descargarCodigo {
-  width: 10%;
-  background-color: #3CB371;
-  color: #fff;
-  display: none;
-  text-align: center;
-  border: #eee solid 2px;
-  text-decoration: none; }
-
-#codigoQR {
-  width: 256px;
-  height: 256px;
-  margin-top: 25px;
-  border: 2px solid #eee; }
+@media (max-width: 425px) {
+  .Title {
+    padding: 5%; }
+  #homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .homeCard {
+    width: 90%;
+    margin-bottom: 4%;
+    font-size: 5vw; }
+  .irMenu {
+    margin-top: 5%;
+    width: 50%; }
+  .loginElement {
+    width: 80%; }
+  .Button {
+    width: 80%; }
+  #errorMessage {
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 5%; }
+  .signupElement {
+    width: 80%; }
+  #addRestaurantButton {
+    width: 80%; }
+  #errorImg {
+    width: 100%; }
+  #notFoundImg {
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

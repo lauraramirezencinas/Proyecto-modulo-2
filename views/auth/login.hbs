@@ -10,13 +10,14 @@
 
     <label class="loginElement" for="input-password">Contraseña</label>
     <input class="loginElement" type="password" name="password" id="input-password" placeholder="********" />
-
-    <button class="Button" class="loginElement" type="submit">Inicio sesión</button>
-
-   {{#if errorMessage}}
+    {{#if errorMessage}}
     <div id="errorMessage">
       <p class="error"><b> {{errorMessage}}</b></p>
     </div>
-    {{/if}}
+    {{/if}} 
+
+    <button class="Button" class="loginElement" type="submit">Inicio sesión</button>
+
+   
   </form>
 </div>
