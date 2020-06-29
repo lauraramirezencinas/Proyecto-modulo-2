@@ -1,11 +1,11 @@
 {{> navBarPartial}}
 <!-- TITULO -->
-<h2 class="Title">Crea tu Menu para el restaurante: {{ this.restaurante.nombre}}</h2>
+<h2 class="Title">Crea tu Menu para el restaurante: <b> {{ this.restaurante.nombre}}</b></h2>
 <!-- FORMULARIO SELECCIÓN TIPO MENU -->
 
 
 <form action="/tipomenu/{{restaurante.id}}/crear" method="post">
-  <label for="tipoMenu">Escoge</label>
+  <label for="tipoMenu">Escoge el tipo de Menú:</label>
   <select id="tipoDeMenu" name="tipoDeMenu">
     <option value="carta">Carta</option>
     <option value="menu">Menu</option>
@@ -16,7 +16,7 @@
   <input type="text" id="precioMenu" class="inputPrecio hidden" name="precioMenu">
   <label for="infoMenu" class="labelInfoMenu ">Información adicional</label>
   <textarea type="text" id="infoMenu" class="inputInfoMenu hidden" name="infoMenu"></textarea>
-  <input type="submit">
+  <input class="createButton" type="submit" >
 </form>
 
 <!-- SUBTITULO DEL MENU ESCOGIDO -->
@@ -31,28 +31,28 @@
 
 <!-- FORMULARIO EDITAR CATEGORIAS MENU -->
 {{#if idMenu}}
-<div id="form ">
+<div id="categoryEdit-container" id="form ">
 
-  <h2 class="subTitle">Crea tus categorias</h2>
+  <h2 class="subTitle">Crea tus categorias:</h2>
 
   <form id="menuCreate" action="/menu/{{restaurante.id}}/crear" method="POST">
-    <label for="nombreMenu">Nombre de la categoria</label>
-    <input type="text" id="nombreCategoria" name="nombreCategoria" />
+    <label for="nombreMenu">Nombre de la categoria:</label>
+    <input class="input" type="text" id="nombreCategoria" name="nombreCategoria" />
     <input type="hidden" id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}">
     <input type="hidden" id="idMenutipo" name="idMenu" value="{{idMenu}}" />
-    <button type="submit">Guardar menu </button>
+    <button class="createButton" type="submit">Guardar categoría </button>
   </form>
 </div>
 {{/if}}
 <!-- LISTADO CATEGORIAS MENU -->
 <div id="listing-container">
-  <ul>
+  <ul id="editionOptions-container">
     {{#each categorias}}
     <div class="crudOpsContainer">
-      <li id="menuName">{{this.nombreCategoria}}</li>
-      <a class="editLink" href="/menu/{{this._id}}/editar">Editar</a>
+      <li id="menuName"><b> {{this.nombreCategoria}}</b></li>
+      <a class="editLink" href="/menu/{{this._id}}/editar"><b> Editar</b></a>
       <form action="/restaurante/{{this._id}}/borrar" method="POST">
-        <button class="deleteButton" type="submit">Borrar</button>
+        <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
       </form>
     </div>
     {{/each}}

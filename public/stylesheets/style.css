@@ -6,7 +6,7 @@ a {
 
 #boton-logout {
   border: none;
-  background-color: #080808;
+  background-color: #222;
   color: white;
   padding-top: 13px;
   padding-bottom: 15px;
@@ -98,6 +98,11 @@ footer {
   border-radius: 15px;
   padding: 7px; }
 
+#amigasImg {
+  width: 40%;
+  display: block;
+  margin: auto; }
+
 #login-container {
   width: 100%;
   display: flex;
@@ -111,6 +116,11 @@ footer {
   margin-bottom: 5px;
   border-radius: 15px;
   padding: 7px; }
+
+#loginImg {
+  width: 60%;
+  display: block;
+  margin: auto; }
 
 #profile-container {
   width: 100%;
@@ -135,13 +145,6 @@ footer {
   color: white;
   background-color: cornflowerblue; }
 
-#socialDistance {
-  width: 30%;
-  height: auto;
-  position: absolute;
-  bottom: 10px;
-  right: 20px; }
-
 #addRestaurantButton {
   margin-top: 2%;
   width: 30%;
@@ -149,6 +152,17 @@ footer {
   background-color: #222;
   border-radius: 15px;
   padding: 7px;
+  display: block;
+  margin: auto;
+  margin-bottom: 3%; }
+
+#cardLogo {
+  max-height: 200px;
+  max-width: 200px; }
+
+#logo-container {
+  height: 200px;
+  width: 250px;
   display: block;
   margin: auto; }
 
@@ -191,6 +205,10 @@ footer {
   padding: 1%;
   border-radius: 15px; }
 
+#tipoDeMenu {
+  border-radius: 15px;
+  padding: 7px; }
+
 #creaMenu-container {
   width: 100%;
   display: flex;
@@ -210,24 +228,45 @@ footer {
   border-radius: 15px;
   padding: 1%; }
 
+#categoryEdit-container {
+  margin-bottom: 10%; }
+
 #listing-container {
-  width: 50%;
-  text-align: center; }
+  display: block;
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding-top: 2%;
+  padding-bottom: 2%; }
 
 .crudOpsContainer {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 1%; }
+  margin-bottom: 2%;
+  justify-content: space-around;
+  border-bottom: 2px solid white; }
+
+#editionOptions-container {
+  display: flex;
+  flex-direction: column; }
 
 #crudElement {
   margin-right: 2%; }
 
-.deleteButton {
+.createButton {
   border-radius: 15px;
   color: white;
   background-color: #222;
   border: none;
+  padding: 10px;
+  margin-left: 1%; }
+
+.input {
+  border-radius: 15px;
   padding: 7px; }
 
 #menuName {
@@ -235,7 +274,8 @@ footer {
 
 .editLink {
   margin-right: 10px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  color: white; }
 
 #editMenuTitle {
   width: 100%;
@@ -251,9 +291,14 @@ footer {
   margin-bottom: 3%; }
 
 #element-listing {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   list-style: none;
   margin-bottom: 8%; }
+
+#deleteButton {
+  background-color: #DC5757; }
 
 .subTitle {
   text-align: center;
@@ -275,6 +320,13 @@ footer {
   background-color: #222;
   border: none;
   padding: 7px; }
+
+#backLink {
+  margin-top: 10%; }
+
+#elemento {
+  margin-right: 90px;
+  margin-bottom: 10%; }
 
 .container {
   width: 100%; }
@@ -357,9 +409,11 @@ footer {
     width: 90%;
     margin-bottom: 4%;
     font-size: 5vw; }
-  .irMenu {
+  .pinInput {
+    width: 30%; }
+  #irMenu {
     margin-top: 5%;
-    width: 50%; }
+    width: 30%; }
   .loginElement {
     width: 80%; }
   .Button {
@@ -369,6 +423,13 @@ footer {
     display: block;
     margin: auto;
     margin-top: 5%; }
+  #loginImg {
+    width: 90%; }
+  #amigasImg {
+    width: 90%; }
+  #logoMenuDisplay {
+    width: 90%;
+    margin-bottom: 8%; }
   .signupElement {
     width: 80%; }
   #addRestaurantButton {
@@ -391,6 +452,10 @@ footer {
     width: 50%; }
   .Button {
     width: 50%; }
+  #loginImg {
+    width: 70%; }
+  #amigasImg {
+    width: 60%; }
   .signupElement {
     width: 50%; }
   #errorMessage {
