@@ -5,10 +5,10 @@
 <div id="form">
   
   <form id="login-container" action="/login" method="POST">
-    <label class="loginElement" for="input-email">Email</label>
+    <label class="loginElement" for="input-email">Email:</label>
     <input class="loginElement" type="email" id="input-email" name="email" placeholder="Introduzca su email" />
 
-    <label class="loginElement" for="input-password">Contraseña</label>
+    <label class="loginElement" for="input-password">Contraseña:</label>
     <input class="loginElement" type="password" name="password" id="input-password" placeholder="********" />
     {{#if errorMessage}}
     <div id="errorMessage">
@@ -20,4 +20,8 @@
 
    
   </form>
+</div>
+
+<div>
+  <img id="loginImg" src="/images/gente-comiendo-cafeterias-patio-comidas_74855-5284.jpg" alt="Imagen">
 </div>
