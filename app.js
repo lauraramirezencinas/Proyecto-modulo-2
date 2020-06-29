@@ -10,7 +10,7 @@ const path = require('path');
 const passport = require('passport');
 const Usuario = require('./models/modelo-usuario');
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 
 //Conexion bases de datos
@@ -35,11 +35,11 @@ const crearSession = require('./configs/session.config');
 crearSession(app);
 app.use(function (req, res, next) {
   res.locals.session = req.session;
-  try{
-  req.session.currentUser = req.session.passport.user;
-} catch{
-  
-}
+  try {
+    req.session.currentUser = req.session.passport.user;
+  } catch{
+
+  }
   next();
 });
 
@@ -73,17 +73,41 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       console.log("Google account details:", profile);
       Usuario.findOne({ googleID: profile.id })
-      .then(user => {
-        if (user) {
-          done(null, user);
-          return;
-        }
-        Usuario.create({ googleID: profile.id, nombre: profile.displayName, email: profile.emails[0].value })
-          .then(newUser => {
-            done(null, newUser);
-          })
-          .catch(err => done(err)); // closes User.create()
-      })
+        .then(user => {
+          if (user) {
+            done(null, user);
+            return;
+          }
+          Usuario.create({ googleID: profile.id, nombre: profile.displayName, email: profile.emails[0].value })
+            .then(newUser => {
+              done(null, newUser);
+            })
+            .catch(err => done(err)); // closes User.create()
+        })
+        .catch(err => done(err)); // closes User.findOne()
+    })
+);
+
+passport.use(
+  new FacebookStrategy({
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
+    callbackURL: "/auth/facebook/callback"
+  },
+    (accessToken, refreshToken, profile, done) => {
+      console.log("Facebbok account details:", profile);
+      Usuario.findOne({ facebookID: profile.id })
+        .then(user => {
+          if (user) {
+            done(null, user);
+            return;
+          }
+          Usuario.create({ facebookID: profile.id, nombre: profile.displayName, email:`${profile.id}@facebook.fake.com`})
+            .then(newUser => {
+              done(null, newUser);
+            })
+            .catch(err => done(err)); // closes User.create()
+        })
         .catch(err => done(err)); // closes User.findOne()
     })
 );

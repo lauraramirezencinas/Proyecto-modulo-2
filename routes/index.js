@@ -125,19 +125,29 @@ router.post('/login', async (req, res, next) => {
 
 //Ruta google
 router.get("/auth/google", passport.authenticate("google", {
-    scope: [
-      "https://www.googleapis.com/auth/userinfo.profile",
-      "https://www.googleapis.com/auth/userinfo.email"
-    ]
-  })
+  scope: [
+    "https://www.googleapis.com/auth/userinfo.profile",
+    "https://www.googleapis.com/auth/userinfo.email"
+  ]
+})
 );
-router.get("/auth/google/callback",passport.authenticate("google", {
+router.get("/auth/google/callback", 
+passport.authenticate("google", {
   successRedirect: "/user-profile",
-  failureRedirect: "/" // hacia dónde debe ir si falla?
+  failureRedirect: "/login" // hacia dónde debe ir si falla?
 
 })
 );
 
+//Ruta Facebook
+router.get('/auth/facebook', passport.authenticate('facebook',
+));
+
+router.get('/auth/facebook/callback',
+  passport.authenticate('facebook', {
+    successRedirect: '/user-profile',
+    failureRedirect: '/login'
+  }));
 
 //Ruta POST logout
 router.post('/logout', (req, res, next) => {
