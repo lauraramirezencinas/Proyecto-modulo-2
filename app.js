@@ -1,12 +1,16 @@
 require('dotenv').config();
-const bodyParser   = require('body-parser');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
-const logger       = require('morgan');
-const path         = require('path');
+const express = require('express');
+const favicon = require('serve-favicon');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
+const logger = require('morgan');
+const path = require('path');
+const passport = require('passport');
+const Usuario = require('./models/modelo-usuario');
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 
 //Conexion bases de datos
@@ -27,10 +31,15 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
-const crearSession=require('./configs/session.config');
+const crearSession = require('./configs/session.config');
 crearSession(app);
 app.use(function (req, res, next) {
   res.locals.session = req.session;
+  try {
+    req.session.currentUser = req.session.passport.user;
+  } catch{
+
+  }
   next();
 });
 
@@ -41,14 +50,79 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+passport.serializeUser((user, callback) => {
+  callback(null, user._id);
+});
+
+passport.deserializeUser((id, callback) => {
+  Usuario.findById(id)
+    .then(user => {
+      callback(null, user);
+    })
+    .catch(error => {
+      callback(error);
+    });
+});
+
+passport.use(
+  new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "/auth/google/callback"
+  },
+    (accessToken, refreshToken, profile, done) => {
+      console.log("Google account details:", profile);
+      Usuario.findOne({ googleID: profile.id })
+        .then(user => {
+          if (user) {
+            done(null, user);
+            return;
+          }
+          Usuario.create({ googleID: profile.id, nombre: profile.displayName, email: profile.emails[0].value })
+            .then(newUser => {
+              done(null, newUser);
+            })
+            .catch(err => done(err)); // closes User.create()
+        })
+        .catch(err => done(err)); // closes User.findOne()
+    })
+);
+
+passport.use(
+  new FacebookStrategy({
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
+    callbackURL: "/auth/facebook/callback"
+  },
+    (accessToken, refreshToken, profile, done) => {
+      console.log("Facebbok account details:", profile);
+      Usuario.findOne({ facebookID: profile.id })
+        .then(user => {
+          if (user) {
+            done(null, user);
+            return;
+          }
+          Usuario.create({ facebookID: profile.id, nombre: profile.displayName, email:`${profile.id}@facebook.fake.com`})
+            .then(newUser => {
+              done(null, newUser);
+            })
+            .catch(err => done(err)); // closes User.create()
+        })
+        .catch(err => done(err)); // closes User.findOne()
+    })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
+  src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-      
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.set('views', path.join(__dirname, 'views'));

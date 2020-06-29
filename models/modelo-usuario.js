@@ -17,10 +17,12 @@ const usuarioSchema = new Schema({
     lowercase: true,
     trim: true
   },
+  googleID: String,
+  facebookID:String,
   //Password property 
   passwordHash: {
     type: String,
-    required: [true, "La contraseña es un campo requerido :) ."]
+    //required: [true, "La contraseña es un campo requerido :) ."]
   }
 })
 
