@@ -57,11 +57,11 @@ router.post("/signup", async (req, res, next) => {
     const usuario = await Usuario.create({ nombre: nombre, email: email, passwordHash: hashedPassword })
     req.session.currentUser = usuario;
     let transporter = await nodemailer.createTransport({
-      host: "smtp.eu.mailgun.org",
+      host: "smtp.sendgrid.net",
       port: 25,
       auth: {
-        user: process.env.USER,
-        pass: process.env.PASS
+        user: process.env.USER_SG,
+        pass: process.env.PASS_SG
       },
     });
     transporter.sendMail({
@@ -69,13 +69,15 @@ router.post("/signup", async (req, res, next) => {
       to: email,
       subject: "¡Bienvenido a MyMenu!",
       html: `<h2><b>Hola</b> ${nombre}, </h1>
-    <h3>Bienvenido a MyMenu</h3>
-    <br/>
-    <p>Una aplicación donde podrás introducir tu carta o menú del dia.</p>
-    <br/>
-    <p>Y todos tus clientes la verán desde su móvil.</p>
-    <img src="https://i2.wp.com/www.diegocoquillat.com/wp-content/uploads/2011/11/15-usos-de-c%C3%B3digos-QR-para-un-restaurante.jpg?fit=702%2C336&ssl=1"/>`
-    });
+      <h3>Bienvenido a MyMenu</h3>
+      <br/>
+      <p>Una aplicación donde podrás introducir tu carta o menú del dia.</p>
+      <br/>
+      <p>Y todos tus clientes la verán desde su móvil.</p>
+      <img src="https://i2.wp.com/www.diegocoquillat.com/wp-content/uploads/2011/11/15-usos-de-c%C3%B3digos-QR-para-un-restaurante.jpg?fit=702%2C336&ssl=1"/>`
+    }, (err, info) => {
+      console.log(err);
+  });
 
     res.redirect("/user-Profile")
   } catch (error) {
