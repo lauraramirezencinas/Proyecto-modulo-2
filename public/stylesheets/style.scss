@@ -7,17 +7,19 @@ a {
 
   //HOME PAGE
 }
-#boton-logout{
+
+#boton-logout {
   border: none;
-  background-color: #080808;
+  background-color: #222;
   color: white;
   padding-top: 13px;
   padding-bottom: 15px;
   outline: none;
 }
 
-.navbar{
-  border-radius:0px!important;
+.navbar {
+  border-radius: 0px !important;
+  
 }
 
 .Title {
@@ -29,23 +31,27 @@ a {
   padding: 1%;
   border-radius: 15px;
 }
+
 .intro {
   text-align: center;
   margin-bottom: 60px;
 }
-.pinSearch{
-  width: 100% ;
+
+.pinSearch {
+  width: 100%;
   text-align: center;
   margin-bottom: 60px;
 }
+
 #homeContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
- 
-  
+
+
 }
+
 .homeCard {
   font-size: 80%;
   text-align: center;
@@ -55,25 +61,31 @@ a {
   border-radius: 15px;
   margin-bottom: 2%;
 }
-footer{
-  position: fixed;
+
+footer {
+
   bottom: 0;
   width: 100%;
   color: white;
   background-color: #222;
-  padding:1% ;
+  padding: 1%;
   border-radius: 15px;
+  text-align: center;
 }
+
 .cardImg {
   width: 40%;
 }
+
 #irMenu {
+  width: 14%;
   border-radius: 15px;
   color: white;
   background-color: #222;
   border: none;
   padding: 7px;
 }
+
 #pin {
   border-radius: 15px;
   text-align: center;
@@ -90,10 +102,11 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   padding: 2%;
   border-radius: 15px;
 }
+
 .signupElement {
   font-size: larger;
   width: 30%;
@@ -101,16 +114,24 @@ footer{
   margin-bottom: 5px;
   border-radius: 15px;
   padding: 7px;
- 
+
 }
+
 .Button {
   margin-top: 2%;
   width: 30%;
   color: white;
-  background-color:#222;
+  background-color: #222;
   border-radius: 15px;
   padding: 7px;
 }
+#amigasImg {
+
+  width: 40%;
+  display: block;
+  margin: auto;
+  
+  }
 
 // LOGIN PAGE
 
@@ -120,6 +141,7 @@ footer{
   flex-direction: column;
   align-items: center;
 }
+
 .loginElement {
   font-size: larger;
   width: 30%;
@@ -128,6 +150,13 @@ footer{
   border-radius: 15px;
   padding: 7px;
 }
+#loginImg {
+
+  width: 60%;
+  display: block;
+  margin: auto;
+  
+  }
 
 // USER PROFILE
 
@@ -137,43 +166,78 @@ footer{
   flex-direction: column;
   align-items: center;
 }
+
 .profileElement {
   font-size: larger;
-  width: 30%; 
+  width: 30%;
   text-align: center;
   margin-bottom: 5px;
 }
+
 .card {
-  text-align: center  ;
+  text-align: center;
 }
-#cardLogo {
-  max-width: 80%;
-  height: auto;
-}
+
 #saveRestaurantButton {
   color: white;
   background-color: cornflowerblue;
 }
+
 #addRestaurantButton {
   color: white;
   background-color: cornflowerblue;
 }
-#socialDistance {
-width: 30%;
-height: auto;  
-position:absolute;
-bottom:10px;
-right:20px
-}
+
 #addRestaurantButton {
   margin-top: 2%;
   width: 30%;
   color: white;
-  background-color:#222;
+  background-color: #222;
   border-radius: 15px;
   padding: 7px;
   display: block;
   margin: auto;
+  margin-bottom: 3%;
+}
+
+#cardLogo {
+
+  max-height: 200px;
+  max-width:200px;
+}
+#logo-container {
+  height: 200px;
+  width: 250px;
+  display: block;
+  margin: auto;
+  
+}
+// EDIT RESTAURANT POP UP
+.modal-title {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 30px;
+  padding: 2%;
+  border-radius: 15px;
+}
+#saveRestaurantButton {
+  background-color: #222;
+  color: white;
+  border-radius: 15px;
+  width: 50%;
+}
+#popUp-button {
+  background-color: #222;
+  color: white;
+  border-radius: 15px;
+  width: 50%;
+  
+}
+.profileElement {
+  width: 50%;
+  border-radius: 15px;
+  padding: 1%;
 }
 
 
@@ -184,6 +248,7 @@ right:20px
   background-color: cornflowerblue;
   margin-bottom: 60px;
 }
+
 .subTitle {
   width: 100%;
   text-align: center;
@@ -191,47 +256,88 @@ right:20px
   margin-bottom: 30px;
   padding: 1%;
   border-radius: 15px;
-} 
+}
+#tipoDeMenu {
+  border-radius: 15px ;
+  padding: 7px;
+}
 #creaMenu-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .creaMenuElement {
   font-size: larger;
-  width: 30%; 
+  width: 30%;
   text-align: center;
   margin-bottom: 15px;
 }
 
-#listing-container {
-  width: 50%;
-  text-align: center;
+#menu-listing {
+  text-align: right;
+  list-style: none;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding: 1%;
+
 }
+#categoryEdit-container {
+  margin-bottom: 10%;
+}
+
+#listing-container {
+  display: block;
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
 .crudOpsContainer {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
+  justify-content: space-around;
+  border-bottom: 2px solid white;
   
+ 
 }
+#editionOptions-container {
+  display: flex;
+  flex-direction: column;
+}
+
 #crudElement {
   margin-right: 2%;
 }
-.deleteButton {
+.createButton {
   border-radius: 15px;
   color: white;
   background-color: #222;
   border: none;
+  padding: 10px;
+
+  margin-left: 1%;
+}
+.input {
+  border-radius: 15px;
   padding: 7px;
 }
 #menuName {
   margin-right: 20px;
 }
+
 .editLink {
   margin-right: 10px;
   margin-bottom: 15px;
+  color: white;
 }
 
 //EDITA MENU
@@ -241,35 +347,46 @@ right:20px
   background-color: cornflowerblue;
   margin-bottom: 60px;
 }
+
 #editName {
-text-align: center;
+  text-align: center;
 }
+
 #editElementPrice {
   text-align: center;
   margin-bottom: 3%;
 }
 
 #element-listing {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   list-style: none;
-  margin-bottom:8%;
+  margin-bottom: 8%;
 }
+#deleteButton {
+  background-color: #DC5757;
+}
+
 .subTitle {
   text-align: center;
   margin-bottom: 3%;
 }
-#menuCreate{
+
+#menuCreate {
   text-align: center;
   margin-bottom: 3%;
 }
 
-#price-element{
+#price-element {
   margin-right: 20px;
 }
+
 #backLink {
-  
+
   text-align: center;
 }
+
 .button {
   border-radius: 15px;
   color: white;
@@ -277,53 +394,74 @@ text-align: center;
   border: none;
   padding: 7px;
 }
+#backLink {
+  margin-top: 10%;
+}
+#elemento {
+  margin-right: 90px;
+  margin-bottom: 10%;
+}
 
 // DISPLAY CARTA
+.container {
+  width: 100%;
+}
+
 #displayMenu-Title {
   text-align: center;
   width: 100%;
   background-color: cornflowerblue;
 }
+
 .menu-name {
   width: 100%;
   color: white;
-  background-color:#222;
- padding: 20px;
- border: none;
+  background-color: #222;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
 }
+
 #prize {
   text-align: end
 }
 
 //DISPLAY MENU ESPECIAL
-.labelPrecio{
-  display: none;
-}
-
-.labelNombreMenu{
-  display: none;
-}
-.labelInfoMenu{
-  display: none;
-}
-
-.listaMenu{
-  margin-top: 25px;
-}
-#logoMenuDisplay {
-  display: block;
- margin:auto;
- margin-bottom: 2%;
-}
-
-#menu-especial{
-  margin-bottom: 20px;
+#menu-especial {
   width: 100%;
   color: white;
-  background-color:#222;
- padding: 20px;
- border: none;
+  background-color: #222;
+  padding: 20px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 15px;
 }
+.menu-container {
+  text-align: center;
+}
+
+.labelPrecio {
+  display: none;
+}
+
+.labelNombreMenu {
+  display: none;
+}
+
+.labelInfoMenu {
+  display: none;
+}
+
+.listaMenu {
+  margin-top: 25px;
+}
+
+#logoMenuDisplay {
+  display: block;
+  margin: auto;
+  margin-bottom: 2%;
+}
+
 //ERRORES
 #errorMessage {
   margin-top: 20px;
@@ -334,16 +472,155 @@ text-align: center;
   text-align: center;
   color: white;
 }
+
 #errorImg {
   display: block;
   margin: auto;
   width: 50%;
 }
+
 #notFoundImg {
   display: block;
   margin: auto;
   width: 50%;
 }
+
 .errormsg {
   text-align: center;
+}
+
+
+//MEDIA QUERYS
+
+//Mobile
+@media (max-width: 425px) {
+
+  //HOME
+  .Title {
+    padding: 5%;
+  }
+
+  #homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homeCard {
+    width: 90%;
+    margin-bottom: 4%;
+    font-size: 5vw;
+  } 
+.pinInput {
+  width: 30%;
+}
+  #irMenu {
+    margin-top: 5%;
+    width: 30%;
+  }
+
+  //LOGIN 
+  .loginElement {
+    width: 80%;
+  }
+
+  .Button {
+    width: 80%;
+  }
+
+  #errorMessage {
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+  }
+  #loginImg {
+    width: 90%;
+  }
+  #amigasImg {
+    width: 90%;
+  }
+  //DISPLAY MENU
+  #logoMenuDisplay {
+    width: 90%;
+    margin-bottom: 8%;
+  }
+
+  //SIGNUP
+  .signupElement {
+    width: 80%;
+  }
+
+  //USER-PROFILE
+  #addRestaurantButton {
+    width: 80%;
+  }
+
+  //ERROR
+  #errorImg {
+    width: 100%;
+  }
+
+  //NOTFOUND
+  #notFoundImg {
+    width: 100%;
+  }
+}
+
+//TABLET
+
+@media (min-width: 426px) and (max-width: 768px) {
+
+  //HOME
+  .homeCard {
+    font-size: 2vw;
+    margin-bottom: 4%;
+  }
+
+  .irMenu {
+    margin-top: 5%;
+    width: 25%;
+  }
+
+  .Title {
+    padding: 3%;
+  }
+
+  //LOGIN
+  .loginElement {
+    width: 50%;
+  }
+
+  .Button {
+    width: 50%;
+  }
+  #loginImg {
+    width: 70%;   
+  }
+  #amigasImg {
+    width: 60%;
+  }
+
+  //SIGNUP
+  .signupElement {
+    width: 50%;
+  }
+
+  #errorMessage {
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+  }
+
+  //ERROR
+  #errorImg {
+    width: 100%;
+  }
+
+  //NOTFOUND
+  #notFoundImg {
+    width: 100%;
+  }
+
 }

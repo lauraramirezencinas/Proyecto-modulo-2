@@ -1,20 +1,26 @@
+<h1 class="Title">{{restaurante.nombre}}</h1>
 <div class="container">
-
-  <h1 class="Title">{{restaurante.nombre}}</h1>
+<!--TITULO -->
+  
+<!--LOGO -->
   <img id="logoMenuDisplay" src="{{restaurante.logoUrl}}">
   {{#each menus}}
 
-
+<!--CARTA -->
   {{#if this.isCarta}}
   {{#each this.categorias}}
   <div class="menu-page">
     <button class="menu-name">{{this.nombre}}</button>
     <div class="hidden menu-container1">
       {{#each this.elementos}}
+      <hr>
       <br>
       <div id="element">{{this.nombre}}</div>
+      
       <div id="prize"> {{this.precio}} €</div>
+      
       {{/each}}
+    
     </div>
   </div>
 
@@ -22,7 +28,10 @@
   {{/each}}
 
   {{else}}
+  <!--MENU ESPECIAL -->
   <button  id="menu-especial">{{this.nombre}} </button>
+ 
+  
   <div class="hidden menu-container">
     
     {{#each this.categorias}}
@@ -31,14 +40,19 @@
     {{#each this.elementos}}
     <br>
     <div id="element">{{this.nombre}} </div>
+    <br>
     {{/each}}
 
     {{/each}}
+    
     {{this.infoMenu}}
     <br>
     {{this.precio}}€
   </div>
+  
   {{/if}}
+ 
   {{/each}}
+ 
 
 </div>

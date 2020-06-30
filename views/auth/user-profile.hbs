@@ -1,10 +1,10 @@
 {{> navBarPartial}}
 <!-- TITULO -->
 <h2 class="Title">Bienvenido {{usuario.nombre}}</h2>
-<!-- FORMULARIO DE CREACION DE RESTAURANTE -->
+<!-- POP UP DE CREACION DE RESTAURANTE -->
 <div>
-  <button id="addRestaurantButton" class="addRestaurante" data-toggle="modal"
-    data-target="#exampleModal1">Añade un nuevo Restaurante</button>
+  <button id="addRestaurantButton" class="addRestaurante" data-toggle="modal" data-target="#exampleModal1">Añade un
+    nuevo Restaurante</button>
 </div>
 <div class="container">
 
@@ -13,24 +13,24 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Añade tu restaurante</h5>
+          <h4 class="modal-title" id="exampleModalLabel"><b> Añade tu restaurante</b></h4>
         </div>
         <div class="modal-body">
           <form class="hidden" id="profile-container" action="/restaurante" method="POST" enctype="multipart/form-data">
-            <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
+            <label class="profileElement" for="nombre"><b>Nombre del restaurante:</b></label>
             <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
 
-            <p class="profileElement"><b>Direccion</b></p>
-            <label class="profileElement" for="calle"><b>Calle</b></label>
+            <p class="profileElement"><b>Direccion:</b></p>
+            <label class="profileElement" for="calle"><b>Calle:</b></label>
             <input class="profileElement" type="text" id="calle" name="calle" />
-            <label class="profileElement" for="numero"><b> Numero</b></label>
+            <label class="profileElement" for="numero"><b> Numero:</b></label>
             <input class="profileElement" type="text" id="numero" name="numero" />
 
-            <label class="profileElement" for="horario"><b> Horario</b></label>
+            <label class="profileElement" for="horario"><b> Horario:</b></label>
             <input class="profileElement" type="text" id="horario" name="horario" />
 
-            <label for="logo">Logo</label>
-            <input type="file" name="logo">
+            <label class="profileElement" for="logo">Logo:</label>
+            <input  type="file" name="logo">
 
             <div class="modal-footer"></div>
             <button id="saveRestaurantButton" class="profileElement" type="submit">Guardar Restaurante</button>
@@ -43,19 +43,27 @@
   {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
 
-<!-- CARD RESTAURANTE -->
+  <!-- CARD RESTAURANTE -->
   <div class="row">
 
     {{#each restaurante}}
-    <div class="col-6 col-md-4">
+    <div class="col-6 col-md-3">
       <div class="card text-center">
         <div class="card-body">
-          <h3 class="card-title">{{this.nombre}}</h3>
-          <img id="cardLogo" src={{this.logoUrl}} alt="">
+          <h3 id="cardTitle" class="card-title">{{this.nombre}}</h3>
+            <div id="logo-container">
+          <img id="cardLogo" src={{this.logoUrl}} alt="logo">
+            </div>
           <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
               class="numero-text">{{this.direccion.numero}}</span></p>
           <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
           <p><b>PIN:</b> {{this.pin}}</p>
+          <input class="item" type="hidden" value="http://localhost:3000/{{this.pin}}">
+          <button class="generarCodigo hidden">Generar Código QR</button>
+          <img class="qr-img hidden">
+          <br>
+          <a href="#" class="descargarCodigo">Descargar</a>
+          <br>
           <a href="/restaurante/{{this.id}}" class="btn btn-primary">Añadir Menu</a>
           <input class="id-editar hidden" value="{{this.id}}">
           <button class="btn button-name-editar" data-toggle="modal" data-target="#exampleModal"><i
@@ -71,38 +79,39 @@
     {{/each}}
 
   </div>
-<!--
+  <!--
   <div>
     <img id="socialDistance" src="/images/distanciamiento-social-restaurante_23-2148545623.jpg" alt="Restaurante">
   </div>
 -->
 
+<!-- POP UP EDICION RESTAURANTE -->
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content"> 
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edita tu restaurante</h5>
+          <h4 class="modal-title" id="exampleModalLabel"><b> Edita tu restaurante</b></h4>
         </div>
         <div class="modal-body">
           <form class="edit-container " id="profile-container" action="/api/restaurante/{{this.id}}/editar"
             method="POST">
-            <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
+            <label class="profileElement" for="nombre"><b>Nombre del restaurante:</b></label>
             <input class="profileElement" type="text" id="nombreRestauranteEdit" name="nombre"
               value="{{this.nombre}}" />
-            <p class="profileElement"><b>Direccion</b></p>
-            <label class="profileElement" for="calle"><b>Calle</b></label>
+            <p class="profileElement"><b>Direccion:</b></p>
+            <label class="profileElement" for="calle"><b>Calle:</b></label>
             <input class="profileElement" type="text" id="calleRestauranteEdit" name="calle"
               value="{{this.direccion.calle}}" />
-            <label class="profileElement" for="numero"><b> Numero</b></label>
+            <label class="profileElement" for="numero"><b> Numero:</b></label>
             <input class="profileElement" type="text" id="numeroRestauranteEdit" name="numero"
               value="{{this.direccion.numero}}" />
-            <label class="profileElement" for="horario"><b> Horario</b></label>
+            <label class="profileElement" for="horario"><b> Horario:</b></label>
             <input class="profileElement" type="text" id="horarioRestauranteEdit" name="horario"
               value="{{this.horario}}" />
             <div class="modal-footer"></div>
-            <button type="submit" class="btn btn-primary">Guardar Restaurante</button>
+            <button id="popUp-button" type="submit" class="btn btn-primary">Guardar Restaurante</button>
         </div>
         </form>
       </div>

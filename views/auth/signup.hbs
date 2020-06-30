@@ -7,20 +7,27 @@
     <label class="signupElement" for="input-username">Nombre de Usuario</label>
     <input class="signupElement" type="text" id="input-username" name="nombre" placeholder="Introduzca su nombre" />
 
-    <label class="signupElement" for="input-email">Email</label>
+    <label class="signupElement" for="input-email">Email:</label>
     <input class="signupElement" type="email" id="input-email" name="email" placeholder="Introduzca su Email" />
 
-    <label class="signupElement" for="input-password">Contraseña</label>
+    <label class="signupElement" for="input-password">Contraseña:</label>
     <input class="signupElement" type="password" name="password" id="input-password" placeholder="********" />
-
-    <button class="Button" class="signupElement" type="submit">Crear cuenta</button>
-
-    {{!-- error message will be added here --}}
+       {{!-- error message will be added here --}}
   {{#if errorMessage}}
     <div id="errorMessage">
       <p class="error"><b> {{errorMessage}}</b></p>
     </div>
     {{/if}}
 
+    <button class="Button" class="signupElement" type="submit">Crear cuenta</button>
+
+ <a  class="Button" href="/auth/google">Accede con Google</a>
+ <a class="Button" href="/auth/facebook">Accede with Facebook</a>
+
   </form>
 </div>
+
+  
+  <div id="loginImgContainer">
+    <img id="amigasImg" src="/images/tres-amigas-sentadas-cafeteria-almorzando-hablando_74855-5295.jpg" alt="Chicas">
+  </div>

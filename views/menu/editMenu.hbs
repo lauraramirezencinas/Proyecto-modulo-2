@@ -1,57 +1,61 @@
 <div>
     {{> navBarPartial}}
-</div>
+</div>  
 <!-- TITULO -->
-<h2 class="Title">Edita Categoria: {{this.categoria.nombreCategoria}}</h2>
+<h2 class="Title">Edita Categoria: <b>{{this.categoria.nombreCategoria}}</b></h2>
 
 
 <div id="center-container">
     <form id="editName" action="/menu/{{this.categoria.id}}" method="POST">
-        <label for=""><b> Nombre de la categoria</b></label>
-        <input type="text" id="nombreMenu" name="nombreCategoria" value="{{this.categoria.nombreCategoria}}">
+        <label for=""><b> Nombre de la categoria:</b></label>
+        <input class="input" type="text" id="nombreMenu" name="nombreCategoria" value="{{this.categoria.nombreCategoria}}">
         <button class="button" type="submit">Guardar</button>
     </form>
 
     <br>
     <!-- FORMULARIO EDITAR ELEMENTO MENU -->
     <form id="editElementPrice" action="/elemento" method="POST">
-        <label for=""><b> Elemento</b></label>
-        <input type="text" id="elementoMenu" name="nombre">
-        <br>
-        <br>
+        <label id="elemento" for=""><b> Elemento:</b></label>
+        <input class="input" type="text" id="elementoMenu" name="nombre">
+      
+        {{#if isCarta}}
         <label for="" id="price-element"><b> Precio</b></label>
-        <input type="text" id="precio" name="precio">
-        <input type="hidden" id="categoria" name="idCategoria" value="{{this.categoria.id}}">
-        <br>
-        <br>
+        <input class="input" type="text" id="precio" name="precio">
+        {{/if}}
+        <input class="input" type="hidden" id="categoria" name="idCategoria" value="{{this.categoria.id}}">
+     
         <button class="button" type="submit">Guardar</button>
     </form>
 </div>
 <!-- ELEMENTOS MENU -->
-<ul id="element-listing">
+<div id="listing-container">
+<ul id="edittingOptions-container">
     {{#each elementosMenu}}
     <div class="crudOpsContainer">
         <li id="crudElement">
-            <span class="elemento-nombre">{{this.nombre}}</span>
-            <span class="elemento-precio">{{this.precio}} €</span></li>
+            <span class="elemento-nombre"><b> {{this.nombre}}</b></span>
+            <span class="elemento-precio"><b>{{this.precio}} €</b></span></li>
 
         <button class="btn button-elemento-editar" data-toggle="modal" data-target="#exampleModal"><i
                 class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                <a class="editLink" href="/elemento/{{this._id}}/editar"><b> Editar</b></a>
         <form action="/elemento/{{this._id}}/borrar" method="POST">
-            <button class="button button-remove-element" type="submit">Borrar</button>
+            <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
         </form>
-
         <form action='/elemento/{{this.id}}/editar' method="POST">
-            <input type="text" id="edit-element" class="input-edit-elemento hidden" name="nombre"
+            <input  type="text" id="edit-element" class="input-edit-elemento hidden" name="nombre"
                 value="{{this.nombre}}">
+            {{#if isCarta}}
             <input type="text" id="edit-precio" class="input-edit-element-precio hidden" name="precio"
                 value="{{this.precio}}">
-            <button type="submit" class="btn btn-primary editar-elemento hidden">Guardar</button>
+            {{/if}}
+            <button type="submit" class="createButton" editar-elemento hidden">Guardar</button>
         </form>
 
     </div>
     {{/each}}
 </ul>
+</div>
 <!-- LINK VOLVER -->
 <div id="backLink">
     <a href="/restaurante/{{categoria.idRestaurante}}">Volver a mis categorias</a>

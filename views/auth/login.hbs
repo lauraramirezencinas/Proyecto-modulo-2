@@ -5,18 +5,24 @@
 <div id="form">
   
   <form id="login-container" action="/login" method="POST">
-    <label class="loginElement" for="input-email">Email</label>
+    <label class="loginElement" for="input-email">Email:</label>
     <input class="loginElement" type="email" id="input-email" name="email" placeholder="Introduzca su email" />
 
-    <label class="loginElement" for="input-password">Contraseña</label>
+    <label class="loginElement" for="input-password">Contraseña:</label>
     <input class="loginElement" type="password" name="password" id="input-password" placeholder="********" />
-
-    <button class="Button" class="loginElement" type="submit">Inicio sesión</button>
-
-   {{#if errorMessage}}
+    {{#if errorMessage}}
     <div id="errorMessage">
       <p class="error"><b> {{errorMessage}}</b></p>
     </div>
-    {{/if}}
+    {{/if}} 
+
+    <button class="Button" class="loginElement" type="submit">Inicio sesión</button>
+
+   <a  class="Button" href="/auth/google">Accede con Google</a>
+   <a class="Button" href="/auth/facebook">Accede with Facebook</a>
   </form>
+</div>
+
+<div>
+  <img id="loginImg" src="/images/gente-comiendo-cafeterias-patio-comidas_74855-5284.jpg" alt="Imagen">
 </div>
