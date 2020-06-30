@@ -1,3 +1,4 @@
+<div id="main-margin">
 {{> navBarPartial}}
 <!-- TITULO -->
 <h2 class="Title">Bienvenido {{usuario.nombre}}</h2>
@@ -30,7 +31,7 @@
             <input class="profileElement" type="text" id="horario" name="horario" />
 
             <label class="profileElement" for="logo">Logo:</label>
-            <input  type="file" name="logo">
+            <input type="file" name="logo">
 
             <div class="modal-footer"></div>
             <button id="saveRestaurantButton" class="profileElement" type="submit">Guardar Restaurante</button>
@@ -51,9 +52,9 @@
       <div class="card text-center">
         <div class="card-body">
           <h3 id="cardTitle" class="card-title">{{this.nombre}}</h3>
-            <div id="logo-container">
-          <img id="cardLogo" src={{this.logoUrl}} alt="logo">
-            </div>
+          <div id="logo-container">
+            <img id="cardLogo" src={{this.logoUrl}} alt="logo">
+          </div>
           <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
               class="numero-text">{{this.direccion.numero}}</span></p>
           <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
@@ -85,12 +86,12 @@
   </div>
 -->
 
-<!-- POP UP EDICION RESTAURANTE -->
+  <!-- POP UP EDICION RESTAURANTE -->
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content"> 
+      <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title" id="exampleModalLabel"><b> Edita tu restaurante</b></h4>
         </div>
@@ -118,4 +119,4 @@
     </div>
   </div>
 </div>
-
+</div>

@@ -10,8 +10,16 @@ const Menu = require('../models/modelo-menu');
 //Ruta POST elemento menú
 router.post('/elemento', async (req, res, next) => {
   try {
-    const { nombre, precio, idCategoria } = req.body;
-    const elemento = await ElementoMenu.create({ nombre: nombre, precio: precio, idCategoria: idCategoria });
+    const {
+      nombre,
+      precio,
+      idCategoria
+    } = req.body;
+    const elemento = await ElementoMenu.create({
+      nombre: nombre,
+      precio: precio,
+      idCategoria: idCategoria
+    });
     console.log("Elemento de la categoria creada con exito: ", elemento);
     res.redirect(`/menu/${idCategoria}/editar`)
   } catch (err) {
@@ -23,11 +31,20 @@ router.post('/elemento', async (req, res, next) => {
 router.get('/menu/:id/editar', async (req, res, next) => {
   try {
     const categoria = await Categoria.findById(req.params.id);
-    const menu= await Menu.findOne({_id: categoria.idMenu});
+    const menu = await Menu.findOne({
+      _id: categoria.idMenu
+    });
     console.log(menu)
-    const elementosMenu = await ElementoMenu.find({ idCategoria: req.params.id });
-    res.render('menu/editMenu', { elementosMenu: elementosMenu, categoria: categoria, idCategoria: req.params.id , 
-    menu:menu, isCarta: menu.tipoDeMenu=='carta'})
+    const elementosMenu = await ElementoMenu.find({
+      idCategoria: req.params.id
+    });
+    res.render('menu/editMenu', {
+      elementosMenu: elementosMenu,
+      categoria: categoria,
+      idCategoria: req.params.id,
+      menu: menu,
+      isCarta: menu.tipoDeMenu == 'carta'
+    })
   } catch (err) {
     next(err)
   }
@@ -46,12 +63,21 @@ router.post('/elemento/:id/borrar', (req, res, next) => {
 // Ruta GET mostrar elemento específico del menú 
 router.post('/elemento/:id/editar', async (req, res, next) => {
   try {
-    const { nombre, precio } = req.body;
-    const elemento = await ElementoMenu.findByIdAndUpdate(req.params.id, 
-      { $set: { nombre, precio } }, { new: true });
-      console.log(elemento)
+    const {
+      nombre,
+      precio
+    } = req.body;
+    const elemento = await ElementoMenu.findByIdAndUpdate(req.params.id, {
+      $set: {
+        nombre,
+        precio
+      }
+    }, {
+      new: true
+    });
+    console.log(elemento)
     res.redirect(`/menu/${elemento.idCategoria}/editar`)
-  }catch (err) {
+  } catch (err) {
     next(err)
   }
 })

@@ -1,8 +1,10 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-a {
-  color: #00B7FF; }
+#main-margin {
+  width: 85%;
+  display: block;
+  margin: auto; }
 
 #boton-logout {
   border: none;
@@ -23,6 +25,11 @@ a {
   padding: 1%;
   border-radius: 15px; }
 
+#logoMymenu {
+  margin-left: 2%;
+  width: 70px;
+  height: auto; }
+
 .intro {
   text-align: center;
   margin-bottom: 60px; }
@@ -39,7 +46,7 @@ a {
   justify-content: space-between; }
 
 .homeCard {
-  font-size: 80%;
+  font-size: 100%;
   text-align: center;
   width: 30%;
   background-color: cornflowerblue;
@@ -254,7 +261,8 @@ footer {
   background-color: cornflowerblue;
   border-radius: 15px;
   padding-top: 2%;
-  padding-bottom: 2%; }
+  padding-bottom: 2%;
+  margin-bottom: 40px; }
 
 .crudOpsContainer {
   width: 100%;
@@ -291,6 +299,48 @@ footer {
   margin-right: 10px;
   margin-bottom: 15px;
   color: white; }
+
+#menuCreate-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.inputNombreMenu {
+  border-radius: 15px;
+  padding: 5px; }
+
+.inputPrecio {
+  border-radius: 15px;
+  padding: 5px; }
+
+.inputInfoMenu {
+  border-radius: 15px; }
+
+.labelNombreMenu {
+  margin-right: 20px; }
+
+.labelPrecio {
+  margin-right: 20px;
+  margin-left: 20px; }
+
+.labelInfoMenu {
+  margin-right: 20px;
+  margin-left: 20px; }
+
+#instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.instructionsElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px; }
+
+.imgInstructions {
+  margin-right: 20px; }
 
 #editMenuTitle {
   width: 100%;
@@ -392,7 +442,10 @@ footer {
   margin-bottom: 2%; }
 
 #errorMessage {
+  display: block;
+  margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 30%;
   background-color: #DC5757;
   border-radius: 15px;

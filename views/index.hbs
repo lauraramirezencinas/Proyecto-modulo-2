@@ -1,50 +1,54 @@
-{{> navBarPartial}}
+<div id="main-margin">
+    {{> navBarPartial}}
+    <!-- TITULO-->
+    <h1 class="Title"><b> Bienvenido a {{title}}</b> <img id="logoMymenu" src="/images/mymenu.svg" alt=""> </h1>
 
-
-<!-- TITULO-->
-<h1 class="Title"><b> Bienvenido a {{title}}</b></h1>
-
-<!-- FORM PIN-->
-<div class="pinSearch">
-    <label for="input-password">Busca por pin</label>
-    <input type="number" class="pinInput" id="pin" name="pin" placeholder="****" />
-    {{#if errorMessage}}
+    <!-- FORM PIN-->
+    <div class="pinSearch">
+        <label for="input-password">Busca por pin</label>
+        <input type="number" class="pinInput" id="pin" name="pin" placeholder="****" />
+        {{#if errorMessage}}
         <p id="errorMessage"><b> {{errorMessage}}</b></p>
-    {{/if}}
+        {{/if}}
 
-    <button class="irMenu" id="irMenu">IR AL MENU</button>
-    
-</div>
+        <button class="irMenu" id="irMenu">IR AL MENU</button>
 
-
+    </div>
 
 
-<!-- INTRO-->
-<h2 class="intro"><b> Como funciona {{title}} ?</b></h2>
 
-<!-- DIV CENTRAL-->
-<div>
-    <div id="homeContainer">
-        <div class="homeCard">
-            <img class="cardImg" src="/images/formulario.png" alt="registro">
-            <h3><b> Registrate!</b></h3>
-            <p>Registrate como usuario y añade tu local</p>
-        </div>
-        <div class="homeCard">
-            <img class="cardImg" src="images/diario.png" alt="menu">
-            <h3><b> Introduce tu menú</b></h3>
-            <p>Introduce tus menús y muestralos a tus clientes desde la comodidad de su móvil y de forma 100% higienica,
-                sin pagina web requerida!</p>
-        </div>
-        <div class="homeCard">
-            <img class="cardImg" src="/images/telefono.png" alt="busqueda">
-            <h3><b> Muestra tu Menú</b></h3>
-            <p>Tus clientes podrán visualizar tu menú a traves del pin facilitado por la aplicación. Mantén tu menú
-                siempre actualizado en pocos pasos!</p>
+
+    <!-- INTRO-->
+    <h2 class="intro"><b> Como funciona {{title}} ?</b></h2>
+
+    <!-- DIV CENTRAL-->
+    <div>
+        <div id="homeContainer">
+            <div class="homeCard">
+                <img class="cardImg" src="/images/formulario.png" alt="registro">
+                <h3><b> Registrate!</b></h3>
+                <p>Registrate como usuario y añade tu local</p>
+            </div>
+            <div class="homeCard">
+                <img class="cardImg" src="images/diario.png" alt="menu">
+                <h3><b> Introduce tu menú</b></h3>
+                <p>Introduce tus menús y muestralos a tus clientes desde la comodidad de su móvil y de forma 100%
+                    higienica,
+                    sin pagina web requerida!</p>
+            </div>
+            <div class="homeCard">
+                <img class="cardImg" src="/images/telefono.png" alt="busqueda">
+                <h3><b> Muestra tu Menú</b></h3>
+                <p>Tus clientes podrán visualizar tu menú a traves del pin facilitado por la aplicación. Mantén tu menú
+                    siempre actualizado en pocos pasos!</p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- FOOTER -->
-<footer>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a
-        href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a></footer>
+    <!-- FOOTER -->
+    <footer>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
+        <br>
+        Logo diseñado por el gran Robert!!
+    </footer>
+</div>
