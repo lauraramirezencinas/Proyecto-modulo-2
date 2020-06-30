@@ -75,7 +75,7 @@ router.post("/signup", async (req, res, next) => {
       <p>Ahora podrás introducir tu carta o menú del dia y mostrarlo a tus clientes de manera inmediata.</p>
       <br/>
       <p>100% higienico y rapido!</p>
-      <img src="/images/mymenu.png" alt="logo Mymenu">
+      <img src="https://res.cloudinary.com/dtkvfvtev/image/upload/v1593548914/mymenu_lchxqn.png" alt="logo Mymenu">
       `
       
     }, (err, info) => {
