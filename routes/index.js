@@ -57,11 +57,11 @@ router.post("/signup", async (req, res, next) => {
     const usuario = await Usuario.create({ nombre: nombre, email: email, passwordHash: hashedPassword })
     req.session.currentUser = usuario;
     let transporter = await nodemailer.createTransport({
-      host: "smtp.sendgrid.net",
+      host: "smtp.eu.mailgun.org",
       port: 25,
       auth: {
-        user: process.env.USER_SG,
-        pass: process.env.PASS_SG
+        user: process.env.USER_MG,
+        pass: process.env.PASS_MG
       },
     });
     transporter.sendMail({
@@ -70,11 +70,14 @@ router.post("/signup", async (req, res, next) => {
       subject: "¡Bienvenido a MyMenu!",
       html: `<h2><b>Hola</b> ${nombre}, </h1>
       <h3>Bienvenido a MyMenu</h3>
+      
       <br/>
-      <p>Una aplicación donde podrás introducir tu carta o menú del dia.</p>
+      <p>Ahora podrás introducir tu carta o menú del dia y mostrarlo a tus clientes de manera inmediata.</p>
       <br/>
-      <p>Y todos tus clientes la verán desde su móvil.</p>
-      <img src="https://i2.wp.com/www.diegocoquillat.com/wp-content/uploads/2011/11/15-usos-de-c%C3%B3digos-QR-para-un-restaurante.jpg?fit=702%2C336&ssl=1"/>`
+      <p>100% higienico y rapido!</p>
+      <img src="/images/mymenu.png" alt="logo Mymenu">
+      `
+      
     }, (err, info) => {
       console.log(err);
   });
