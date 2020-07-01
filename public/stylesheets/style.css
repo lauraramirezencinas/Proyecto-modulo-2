@@ -47,6 +47,21 @@ a {
   border-radius: 15px;
   margin-bottom: 2%; }
 
+#restauranteContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.restauranteCard {
+  font-size: 80%;
+  text-align: center;
+  width: 30%;
+  background-color: cornflowerblue;
+  padding: 3%;
+  border-radius: 15px;
+  margin-bottom: 2%; }
+
 footer {
   bottom: 0;
   width: 100%;
@@ -452,7 +467,17 @@ footer {
   #errorImg {
     width: 100%; }
   #notFoundImg {
-    width: 100%; } }
+    width: 100%; }
+  #restauranteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .restauranteCard {
+    width: 90%;
+    margin-bottom: 4%;
+    font-size: 5vw; }
+  #infoRestaurante {
+    padding-top: 70px; } }
 
 @media (min-width: 426px) and (max-width: 768px) {
   .homeCard {
@@ -481,6 +506,18 @@ footer {
   #errorImg {
     width: 100%; }
   #notFoundImg {
-    width: 100%; } }
+    width: 100%; }
+  .restauranteCard {
+    font-size: 2vw;
+    margin-bottom: 4%; }
+  #infoRestaurante {
+    padding-top: 70px; } }
+
+nav ul {
+  display: flex; }
+
+nav li {
+  flex: auto;
+  list-style: none; }
 
 /*# sourceMappingURL=style.css.map */
