@@ -1,6 +1,9 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
+li {
+  list-style: none; }
+
 #main-margin {
   width: 85%;
   display: block;

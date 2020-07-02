@@ -5,23 +5,25 @@
   <!-- FORMULARIO SELECCIÓN TIPO MENU -->
 
 
-  <form action="/tipomenu/{{restaurante.id}}/crear" method="post">
-    <label for="tipoMenu">Escoge el tipo de Menú:</label>
-    <select id="tipoDeMenu" name="tipoDeMenu">
-      <option value="carta">Carta</option>
-      <option value="menu">Menu</option>
-    </select>
-    <div id="menuCreate-container">
-      <label class="labelNombreMenu" for="nombreMenu">Nombre:</label>
-      <input type="text" class="inputNombreMenu hidden" id="nombreMenu" name="nombreMenu">
-      <label for="precioMenu" class="labelPrecio">Precio:</label>
-      <input type="text" id="precioMenu" class="inputPrecio hidden" name="precioMenu">
-      <label for="infoMenu" class="labelInfoMenu ">Información adicional:</label>
-      <textarea type="text" id="infoMenu" class="inputInfoMenu hidden" name="infoMenu"></textarea>
-      <input class="createButton" type="submit">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form action="/tipomenu/{{restaurante.id}}/crear" method="post">
+        <label for="tipoMenu" class="tipoDeMenuEscoger">Escoge el tipo de Menú:</label>
+        <select id="tipoDeMenu" class="form-control tipoDeMenuEscoger" name="tipoDeMenu">
+          <option value="carta">Carta</option>
+          <option value="menu">Menu</option>
+        </select>
+        <label class="labelNombreMenu" for="nombreMenu tipoDeMenuEscoger">Nombre</label>
+        <input type="text" class=" form-control inputNombreMenu hidden" id="nombreMenu" name="nombreMenu">
+        <label for="precioMenu" class="labelPrecio tipoDeMenuEscoger">Precio</label>
+        <input type="text" id="precioMenu" class=" tipoDeMenuEscoger form-control inputPrecio hidden" name="precioMenu">
+        <label for="infoMenu" class="labelInfoMenu ">Información adicional</label>
+        <textarea type="text" id="infoMenu" class="inputInfoMenu form-control hidden" name="infoMenu"></textarea>
+        <input class="createButton" type="submit">
+      </form>
     </div>
+  </div>
 
-  </form>
 
   <!-- SUBTITULO DEL MENU ESCOGIDO -->
   <ul class="nav nav-tabs nav-justified listaMenu">
@@ -62,20 +64,22 @@
       {{/each}}
     </ul>
   </div>
- 
 
- <div>
-  <ul id="instructions">
-    <li class="instructionsElement">
-      <p><img class="imgInstructions" src="/images/escoge.png" alt="">Escoge entre Carta o menú cerrado</p>
-    </li>
-    <li class="instructionsElement">
-      <p><img class="imgInstructions" src="/images/form.png" alt=""></p>Selecciona el nombre y pon el precio. Puedes
-      añadir mas informacion en el campo "Informacion adicional"
-    </li>
-    <li class="instructionsElement">
-      <p><img class="imgInstructions" src="/images/listo.png" alt="">Ya tienes disponible tu QR y pin disponible para que tus clientes vean el menú!!</p>
-    </li>
-  </ul>
- </div>
+
+  <div>
+    <ul id="instructions">
+      <li class="instructionsElement">
+        <p><img class="imgInstructions" src="/images/escoge.png" alt="">Escoge entre Carta o menú cerrado</p>
+      </li>
+      <li class="instructionsElement">
+        <p><img class="imgInstructions" src="/images/form.png" alt=""></p>Selecciona el nombre y pon el precio. Puedes
+        añadir mas informacion en el campo "Informacion adicional"
+      </li>
+      <li class="instructionsElement">
+        <p><img class="imgInstructions" src="/images/listo.png" alt="">Ya tienes disponible tu QR y pin disponible
+          para
+          que tus clientes vean el menú!!</p>
+      </li>
+    </ul>
+  </div>
 </div>
