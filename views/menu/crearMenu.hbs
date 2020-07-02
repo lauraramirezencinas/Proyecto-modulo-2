@@ -1,5 +1,6 @@
+ {{> navBarPartial}}
 <div id="main-margin">
-  {{> navBarPartial}}
+ 
   <!-- TITULO -->
   <h2 class="Title">Crea tu Menu para el restaurante: <b> {{ this.restaurante.nombre}}</b></h2>
   <!-- FORMULARIO SELECCIÓN TIPO MENU -->
@@ -74,6 +75,7 @@
     </ul>
   </div>
 
+  <!-- INSTRUCCIONES -->
   {{else}}
   <div>
     <ul id="instructions">
@@ -93,4 +95,5 @@
   </div>
 
   {{/if}}
+
 </div>

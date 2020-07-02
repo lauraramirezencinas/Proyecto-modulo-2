@@ -78,28 +78,6 @@ h3, h4{
   margin-bottom: 2%;
 }
 
-#restauranteContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-}
-
-.restauranteCard {
-  font-size: 80%;
-  text-align: center;
-  width: 30%;
-  background-color: cornflowerblue;
-  padding: 3%;
-  border-radius: 15px;
-  margin-bottom: 2%;
-}
-
-.infoRestaurante{
-  
-}
-
 
 footer {
 
@@ -262,8 +240,10 @@ footer {
 
 #cardLogo {
 
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 300px;
+  max-width: 300px;
+  display: block;
+  margin: auto;
 }
 
 #logo-container {
@@ -273,6 +253,36 @@ footer {
   margin: auto;
 
 }
+#restauranteContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+
+}
+
+.restauranteCard {
+  font-size: 80%;
+  text-align: center;
+  width: 30%;
+  background-color: cornflowerblue;
+  padding: 3%;
+  border-radius: 15px;
+  margin-bottom: 2%;
+}
+.nombreLogo {
+  text-align: center;
+}
+#editButton {
+border: 1px solid black;
+}
+#QRimg {
+  max-width: 150px;
+  max-height:150px;
+}
+
 
 // EDIT RESTAURANT POP UP
 .modal-title {
