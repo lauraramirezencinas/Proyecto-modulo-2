@@ -19,36 +19,45 @@
         <input type="text" id="precioMenu" class=" tipoDeMenuEscoger form-control inputPrecio hidden" name="precioMenu">
         <label for="infoMenu" class="labelInfoMenu ">Información adicional</label>
         <textarea type="text" id="infoMenu" class="inputInfoMenu form-control hidden" name="infoMenu"></textarea>
-        <input class="createButton" type="submit">
+        <input class="createButton" type="submit" value="Crear">
       </form>
     </div>
   </div>
 
-
+  {{#if menus}}
   <!-- SUBTITULO DEL MENU ESCOGIDO -->
+
   <ul class="nav nav-tabs nav-justified listaMenu">
-    {{#each menu}}
-    <li class=""><a href="/restaurante/{{this.idRestaurante}}?idmenu={{this.id}}">{{this.tipoDeMenu}}</a></li>
-    <form action="/tipodemenu/{{this.idRestaurante}}/borrar?idmenu={{this.id}}" method="POST">
-      <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
-    </form>
+    {{#each menus}}
+    <li class="{{#if this.seleccionado}}active{{/if}}"><a
+        href="/restaurante/{{this.idRestaurante}}?idmenu={{this.id}}">{{this.tipoDeMenu}}</a></li>
     {{/each}}
   </ul>
 
+  <!--  <h2 class="subTitle">Crea tus categorias</h2>-->
   <!-- FORMULARIO EDITAR CATEGORIAS MENU -->
   {{#if idMenu}}
   <div id="categoryEdit-container" id="form ">
 
-    <h2 class="subTitle">Crea tus categorias:</h2>
+    {{#if menuSeleccionado.isCarta}}
+    <h3>Carta</h3>
+    {{else}}
+    <h3>{{menuSeleccionado.nombreMenu}}</h3>
+    <h4>{{menuSeleccionado.precioMenu}}</h4>
+    <h4>{{menuSeleccionado.infoMenu}}</h4>
+    {{/if}}
 
     <form id="menuCreate" action="/menu/{{restaurante.id}}/crear" method="POST">
       <label for="nombreMenu">Nombre de la categoria:</label>
       <input class="input" type="text" id="nombreCategoria" name="nombreCategoria" />
       <input type="hidden" id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}">
       <input type="hidden" id="idMenutipo" name="idMenu" value="{{idMenu}}" />
-      <button class="createButton" type="submit">Guardar categoría </button>
+      <button class="createButton" type="submit">Crear categoría </button>
     </form>
   </div>
+  <form action="/tipodemenu/{{restaurante.id}}/borrar?idmenu={{idMenu}}" method="POST">
+    <button class=" btn btn-danger restaurant-delete">BORRAR <i class="fa fa-trash-o"></i></button>
+  </form>
   {{/if}}
   <!-- LISTADO CATEGORIAS MENU -->
   <div id="listing-container">
@@ -65,7 +74,7 @@
     </ul>
   </div>
 
-
+  {{else}}
   <div>
     <ul id="instructions">
       <li class="instructionsElement">
@@ -82,4 +91,6 @@
       </li>
     </ul>
   </div>
+
+  {{/if}}
 </div>
