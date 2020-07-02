@@ -23,7 +23,7 @@ router.post('/tipomenu/:id/crear', async (req, res, next) => {
       idRestaurante: idRestaurante,
       infoMenu: infoMenu
     })
-    res.redirect(`/restaurante/${idRestaurante}`)
+    res.redirect(`/restaurante/${idRestaurante}?idmenu=${tipoMen._id}`)
   } catch (err) {
     next(err)
   }
