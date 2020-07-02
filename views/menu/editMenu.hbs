@@ -29,6 +29,8 @@
         </form>
     </div>
     <!-- ELEMENTOS MENU -->
+
+    {{#if elementosMenu}}
     <div id="listing-container">
         <ul id="edittingOptions-container">
             {{#each elementosMenu}}
@@ -55,9 +57,13 @@
             </div>
             {{/each}}
         </ul>
+
     </div>
+    {{else}}
+    {{/if}}
+
     <!-- LINK VOLVER -->
     <div id="backLink">
-        <a href="/restaurante/{{categoria.idRestaurante}}">Volver a mis menús</a>
+        <a href="/restaurante/{{categoria.idRestaurante}}?idmenu={{menu.id}}">Volver a mi menú</a>
     </div>
 </div>

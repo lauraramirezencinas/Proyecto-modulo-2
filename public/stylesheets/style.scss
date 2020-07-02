@@ -26,10 +26,19 @@ h3, h4{
   outline: none;
 }
 
+#boton-inicio{
+  color: white;
+  text-decoration: none;
+}
+
 .navbar {
   border-radius: 0px !important;
 
 }
+.navbar-header{
+  margin-top: 10px;
+}
+
 
 .Title {
 
@@ -520,7 +529,7 @@ footer {
 }
 
 #backLink {
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 #elemento {
