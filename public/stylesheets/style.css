@@ -345,8 +345,7 @@ footer {
 
 #instructions {
   display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  flex-direction: column; }
 
 .instructionsElement {
   display: flex;
@@ -565,12 +564,5 @@ footer {
     margin-bottom: 4%; }
   #infoRestaurante {
     padding-top: 70px; } }
-
-nav ul {
-  display: flex; }
-
-nav li {
-  flex: auto;
-  list-style: none; }
 
 /*# sourceMappingURL=style.css.map */
