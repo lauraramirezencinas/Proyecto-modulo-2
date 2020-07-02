@@ -254,7 +254,17 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5%;
+  border-bottom: 3px solid cornflowerblue;
 
+}
+.QrCard {
+  display: flex;
+  flex-direction: column;
+  
+}
+.descargarCodigo {
+
+  text-align: center;
 }
 
 .restauranteCard {
@@ -270,11 +280,16 @@ footer {
   text-align: center;
 }
 #editButton {
+  width: 100%;
 border: 1px solid black;
 }
 #QRimg {
   max-width: 150px;
   max-height:150px;
+}
+#gestionMenu {
+  width: 100%;
+  border: 1px solid black;
 }
 
 
@@ -693,6 +708,23 @@ border: 1px solid black;
   #addRestaurantButton {
     width: 80%;
   }
+  #restauranteContainer {
+    margin-bottom: 50px;
+    align-items: center;
+    padding-bottom: 60px;
+  }
+  .Qr {
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  #QRimg {
+    display: block;
+    margin: auto;
+  }
+  .QrCard {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 
   //ERROR
   #errorImg {
@@ -768,6 +800,18 @@ border: 1px solid black;
     display: block;
     margin: auto;
     margin-top: 5%;
+  }
+  // USER-PROFILE
+  #addRestaurantButton {
+    width: 50%;
+    margin-bottom: 10%;
+  }
+  #QRimg {
+    max-width: 100px;
+  }
+  #cardLogo {
+    max-width: 200px;
+    height: auto;
   }
 
   //ERROR

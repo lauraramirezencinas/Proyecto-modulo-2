@@ -60,37 +60,35 @@
           </div>
         </div>
       </div>
-       <!-- aplicar ppadding en todas las pantallas menos mobile  -->
        <!-- BLOQUE CARD INFO RESTAURANTE -->
-        <div id="restauranteCard" style="padding-top: 60px;">
+        <div id="restauranteCard">
           <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
               class="numero-text">{{this.direccion.numero}}</span></p>
           <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
           <p><b>PIN:</b> {{this.pin}}</p>
         </div>
         <!-- BLOQUE CARD QR -->
-        <div id="restauranteCard">
+        <div id="restauranteCard" class="QrCard">
           <input class="item" type="hidden" value="http://app-mymenu.herokuapp.com/{{this.pin}}">
           <button class="generarCodigo hidden">Generar Código QR</button>
           <img id="QRimg" class="qr-img hidden">
           <br>
-           <!-- aplicar ppadding en todas las pantallas -->
-          <a href="#" class="descargarCodigo" style="margin-left: 60px;">Descargar</a>
+          <a href="#" class="descargarCodigo" >Descargar</a>
         </div>
         <!--BLOQUE CARD BOTONES -->
         <div id="restauranteCard" class="cardBotones">
-          <div id="gestionMenu" class="col-xs-12">
-          <a href="/restaurante/{{this.id}}" class="btn btn-primary">Gestionar Menús</a>
+          <div  class="col-xs-12">
+          <a id="gestionMenu" href="/restaurante/{{this.id}}" class="btn btn-primary">Gestionar Menús</a>
           <input class="id-editar hidden" value="{{this.id}}">
           </div>
           <div>
-           <div class="col-xs-6">
+           <div  class="col-xs-6">
               <button id="editButton" class="btn button-name-editar" data-toggle="modal" data-target="#exampleModal">Editar <i
                   class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
             </div>
             <div class="col-xs-6">
               <form action="/api/restaurante/{{this.id}}/borrar" method="POST">
-                <button class=" btn btn-danger restaurant-delete" style="margin-left: -23px">Borrar <i class="fa fa-trash-o"></i></button>
+                <button class=" btn btn-danger restaurant-delete">Borrar <i class="fa fa-trash-o"></i></button>
               </form>
             </div>
         </div>
