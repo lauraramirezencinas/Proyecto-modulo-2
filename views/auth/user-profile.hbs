@@ -1,3 +1,4 @@
+<div id="main-margin">
 {{> navBarPartial}}
 <!-- TITULO -->
 <h2 class="Title">Bienvenido {{usuario.nombre}}</h2>
@@ -47,6 +48,7 @@
 
   <div>
     {{#each restaurante}}
+<<<<<<< HEAD
     <div id="restauranteContainer">
       <div id="restauranteCard">
         <h3 id="cardTitle" class="card-title">{{this.nombre}}</h3>
@@ -68,6 +70,15 @@
       </div>
        <!-- aplicar ppadding en todas las pantallas menos mobile  -->
         <div id="restauranteCard" style="padding-top: 60px;">
+=======
+    <div class="col-6 col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 id="cardTitle" class="card-title">{{this.nombre}}</h3>
+          <div id="logo-container">
+            <img id="cardLogo" src={{this.logoUrl}} alt="logo">
+          </div>
+>>>>>>> dea9792b1313d725651fdc1ca3f576065cafc194
           <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
               class="numero-text">{{this.direccion.numero}}</span></p>
           <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
@@ -98,6 +109,7 @@
   </div>
 -->
 
+<<<<<<< HEAD
     <!-- POP UP EDICION RESTAURANTE -->
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -127,7 +139,42 @@
               <button id="popUp-button" type="submit" class="btn btn-primary">Guardar Restaurante</button>
           </div>
           </form>
+=======
+  <!-- POP UP EDICION RESTAURANTE -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel"><b> Edita tu restaurante</b></h4>
+        </div>
+        <div class="modal-body">
+          <form class="edit-container " id="profile-container" action="/api/restaurante/{{this.id}}/editar"
+            method="POST">
+            <label class="profileElement" for="nombre"><b>Nombre del restaurante:</b></label>
+            <input class="profileElement" type="text" id="nombreRestauranteEdit" name="nombre"
+              value="{{this.nombre}}" />
+            <p class="profileElement"><b>Direccion:</b></p>
+            <label class="profileElement" for="calle"><b>Calle:</b></label>
+            <input class="profileElement" type="text" id="calleRestauranteEdit" name="calle"
+              value="{{this.direccion.calle}}" />
+            <label class="profileElement" for="numero"><b> Numero:</b></label>
+            <input class="profileElement" type="text" id="numeroRestauranteEdit" name="numero"
+              value="{{this.direccion.numero}}" />
+            <label class="profileElement" for="horario"><b> Horario:</b></label>
+            <input class="profileElement" type="text" id="horarioRestauranteEdit" name="horario"
+              value="{{this.horario}}" />
+            <div class="modal-footer"></div>
+            <button id="popUp-button" type="submit" class="btn btn-primary">Guardar Restaurante</button>
+>>>>>>> dea9792b1313d725651fdc1ca3f576065cafc194
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div>
+</div>
+</div>
+>>>>>>> dea9792b1313d725651fdc1ca3f576065cafc194

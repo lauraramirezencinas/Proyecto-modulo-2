@@ -1,26 +1,27 @@
+<div id="main-margin">
 <h1 class="Title">{{restaurante.nombre}}</h1>
 <div class="container">
-<!--TITULO -->
-  
-<!--LOGO -->
+  <!--TITULO -->
+
+  <!--LOGO -->
   <img id="logoMenuDisplay" src="{{restaurante.logoUrl}}">
   {{#each menus}}
 
-<!--CARTA -->
+  <!--CARTA -->
   {{#if this.isCarta}}
   {{#each this.categorias}}
   <div class="menu-page">
     <button class="menu-name">{{this.nombre}}</button>
     <div class="hidden menu-container1">
       {{#each this.elementos}}
-      <hr>
+
       <br>
       <div id="element">{{this.nombre}}</div>
-      
+
       <div id="prize"> {{this.precio}} €</div>
-      
+
       {{/each}}
-    
+
     </div>
   </div>
 
@@ -29,11 +30,11 @@
 
   {{else}}
   <!--MENU ESPECIAL -->
-  <button  id="menu-especial">{{this.nombre}} </button>
- 
-  
+  <button id="menu-especial">{{this.nombre}} </button>
+
+
   <div class="hidden menu-container">
-    
+
     {{#each this.categorias}}
     <h2>{{this.nombre}}</h2>
 
@@ -44,15 +45,16 @@
     {{/each}}
 
     {{/each}}
-    
+
     {{this.infoMenu}}
     <br>
     {{this.precio}}€
   </div>
-  
-  {{/if}}
- 
-  {{/each}}
- 
 
+  {{/if}}
+
+  {{/each}}
+
+
+</div>
 </div>

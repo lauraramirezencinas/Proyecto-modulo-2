@@ -2,10 +2,13 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
 
-  //HOME PAGE
+//HOME PAGE
+#main-margin {
+  width: 85%;
+  display: block;
+  margin: auto;
+
 }
 
 #boton-logout {
@@ -19,7 +22,7 @@ a {
 
 .navbar {
   border-radius: 0px !important;
-  
+
 }
 
 .Title {
@@ -32,12 +35,19 @@ a {
   border-radius: 15px;
 }
 
+#logoMymenu {
+  margin-left: 2%;
+  width: 70px;
+  height: auto;
+}
+
 .intro {
   text-align: center;
   margin-bottom: 60px;
 }
 
 .pinSearch {
+
   width: 100%;
   text-align: center;
   margin-bottom: 60px;
@@ -53,7 +63,7 @@ a {
 }
 
 .homeCard {
-  font-size: 80%;
+  font-size: 100%;
   text-align: center;
   width: 30%;
   background-color: cornflowerblue;
@@ -148,13 +158,14 @@ footer {
   border-radius: 15px;
   padding: 7px;
 }
+
 #amigasImg {
 
   width: 40%;
   display: block;
   margin: auto;
-  
-  }
+
+}
 
 // LOGIN PAGE
 
@@ -173,29 +184,33 @@ footer {
   border-radius: 15px;
   padding: 7px;
 }
+
 #loginImg {
 
   width: 60%;
   display: block;
   margin: auto;
-  
-  }
-  #fbButton {
-    background-color: #3b5998;
-    text-align: center;
-  }
-  #fbLogo {
-    height: 25px;
-    width:auto ;
-    margin-right: 5px;
-    
-  }
-  #googleButton {
-    background-color: white;
-    border: 1px solid red;
-    color: red;
-    text-align: center;
-  }
+
+}
+
+#fbButton {
+  background-color: #3b5998;
+  text-align: center;
+}
+
+#fbLogo {
+  height: 25px;
+  width: auto;
+  margin-right: 5px;
+
+}
+
+#googleButton {
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+  text-align: center;
+}
 
 // USER PROFILE
 
@@ -242,15 +257,17 @@ footer {
 #cardLogo {
 
   max-height: 200px;
-  max-width:200px;
+  max-width: 200px;
 }
+
 #logo-container {
   height: 200px;
   width: 250px;
   display: block;
   margin: auto;
-  
+
 }
+
 // EDIT RESTAURANT POP UP
 .modal-title {
   width: 100%;
@@ -260,19 +277,22 @@ footer {
   padding: 2%;
   border-radius: 15px;
 }
+
 #saveRestaurantButton {
   background-color: #222;
   color: white;
   border-radius: 15px;
   width: 50%;
 }
+
 #popUp-button {
   background-color: #222;
   color: white;
   border-radius: 15px;
   width: 50%;
-  
+
 }
+
 .profileElement {
   width: 50%;
   border-radius: 15px;
@@ -296,10 +316,12 @@ footer {
   padding: 1%;
   border-radius: 15px;
 }
+
 #tipoDeMenu {
-  border-radius: 15px ;
+  border-radius: 15px;
   padding: 7px;
 }
+
 #creaMenu-container {
   width: 100%;
   display: flex;
@@ -322,6 +344,7 @@ footer {
   padding: 1%;
 
 }
+
 #categoryEdit-container {
   margin-bottom: 10%;
 }
@@ -335,6 +358,7 @@ footer {
   border-radius: 15px;
   padding-top: 2%;
   padding-bottom: 2%;
+  margin-bottom:40px;
 }
 
 .crudOpsContainer {
@@ -345,9 +369,10 @@ footer {
   margin-bottom: 2%;
   justify-content: space-around;
   border-bottom: 2px solid white;
-  
- 
+
+
 }
+
 #editionOptions-container {
   display: flex;
   flex-direction: column;
@@ -356,6 +381,7 @@ footer {
 #crudElement {
   margin-right: 2%;
 }
+
 .createButton {
   border-radius: 15px;
   color: white;
@@ -365,10 +391,12 @@ footer {
 
   margin-left: 1%;
 }
+
 .input {
   border-radius: 15px;
   padding: 7px;
 }
+
 #menuName {
   margin-right: 20px;
 }
@@ -377,6 +405,56 @@ footer {
   margin-right: 10px;
   margin-bottom: 15px;
   color: white;
+}
+
+#menuCreate-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputNombreMenu {
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.inputPrecio {
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.inputInfoMenu {
+  border-radius: 15px;
+}
+
+.labelNombreMenu {
+  margin-right: 20px;
+}
+
+.labelPrecio {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.labelInfoMenu {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+#instructions {
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+.instructionsElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.imgInstructions {
+  margin-right: 20px;
 }
 
 //EDITA MENU
@@ -403,6 +481,7 @@ footer {
   list-style: none;
   margin-bottom: 8%;
 }
+
 #deleteButton {
   background-color: #DC5757;
 }
@@ -433,9 +512,11 @@ footer {
   border: none;
   padding: 7px;
 }
+
 #backLink {
   margin-top: 10%;
 }
+
 #elemento {
   margin-right: 90px;
   margin-bottom: 10%;
@@ -475,6 +556,7 @@ footer {
   margin-bottom: 20px;
   border-radius: 15px;
 }
+
 .menu-container {
   text-align: center;
 }
@@ -503,7 +585,10 @@ footer {
 
 //ERRORES
 #errorMessage {
+  display: block;
+  margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 30%;
   background-color: #DC5757;
   border-radius: 15px;
@@ -549,11 +634,20 @@ footer {
     width: 90%;
     margin-bottom: 4%;
     font-size: 5vw;
+<<<<<<< HEAD
   } 
 
 .pinInput {
   width: 30%;
 }
+=======
+  }
+
+  .pinInput {
+    width: 30%;
+  }
+
+>>>>>>> dea9792b1313d725651fdc1ca3f576065cafc194
   #irMenu {
     margin-top: 5%;
     width: 30%;
@@ -574,12 +668,15 @@ footer {
     margin: auto;
     margin-top: 5%;
   }
+
   #loginImg {
     width: 90%;
   }
+
   #amigasImg {
     width: 90%;
   }
+
   //DISPLAY MENU
   #logoMenuDisplay {
     width: 90%;
@@ -651,9 +748,11 @@ footer {
   .Button {
     width: 50%;
   }
+
   #loginImg {
-    width: 70%;   
+    width: 70%;
   }
+
   #amigasImg {
     width: 60%;
   }

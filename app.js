@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
   res.locals.session = req.session;
   try {
     req.session.currentUser = req.session.passport.user;
-  } catch{
+  } catch {
 
   }
   next();
@@ -47,7 +47,9 @@ app.use(function (req, res, next) {
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 
 passport.serializeUser((user, callback) => {
@@ -66,19 +68,25 @@ passport.deserializeUser((id, callback) => {
 
 passport.use(
   new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback"
-  },
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "/auth/google/callback"
+    },
     (accessToken, refreshToken, profile, done) => {
       console.log("Google account details:", profile);
-      Usuario.findOne({ googleID: profile.id })
+      Usuario.findOne({
+          googleID: profile.id
+        })
         .then(user => {
           if (user) {
             done(null, user);
             return;
           }
-          Usuario.create({ googleID: profile.id, nombre: profile.displayName, email: profile.emails[0].value })
+          Usuario.create({
+              googleID: profile.id,
+              nombre: profile.displayName,
+              email: profile.emails[0].value
+            })
             .then(newUser => {
               done(null, newUser);
             })
@@ -90,19 +98,25 @@ passport.use(
 
 passport.use(
   new FacebookStrategy({
-    clientID: process.env.FACEBOOK_APP_ID,
-    clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "/auth/facebook/callback"
-  },
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
+      callbackURL: "/auth/facebook/callback"
+    },
     (accessToken, refreshToken, profile, done) => {
       console.log("Facebbok account details:", profile);
-      Usuario.findOne({ facebookID: profile.id })
+      Usuario.findOne({
+          facebookID: profile.id
+        })
         .then(user => {
           if (user) {
             done(null, user);
             return;
           }
-          Usuario.create({ facebookID: profile.id, nombre: profile.displayName, email:`${profile.id}@facebook.fake.com`})
+          Usuario.create({
+              facebookID: profile.id,
+              nombre: profile.displayName,
+              email: `${profile.id}@facebook.fake.com`
+            })
             .then(newUser => {
               done(null, newUser);
             })

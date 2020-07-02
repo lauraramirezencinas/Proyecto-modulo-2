@@ -15,16 +15,25 @@ const Restaurante = require('../models/modelo-restaurante');
 router.get('/', (req, res, next) => {
   if (req.query.error) {
 
-    res.render('index', { errorMessage: req.query.error })
+    res.render('index', {
+      errorMessage: req.query.error
+    })
   }
   res.render('index');
 });
 //Get user-profile
 router.get("/user-Profile", async (req, res) => {
   try {
-    const usuario = await Usuario.findOne({ _id: req.session.currentUser });
-    const restaurante = await Restaurante.find({ userId: req.session.currentUser });
-    res.render("auth/user-profile", { usuario: usuario, restaurante: restaurante })
+    const usuario = await Usuario.findOne({
+      _id: req.session.currentUser
+    });
+    const restaurante = await Restaurante.find({
+      userId: req.session.currentUser
+    });
+    res.render("auth/user-profile", {
+      usuario: usuario,
+      restaurante: restaurante
+    })
   } catch (err) {
     next(err)
   }
@@ -36,10 +45,16 @@ router.get("/signup", (req, res) => res.render("auth/signup"))
 //Ruta POST registro
 router.post("/signup", async (req, res, next) => {
   try {
-    const { nombre, email, password } = req.body
+    const {
+      nombre,
+      email,
+      password
+    } = req.body
     //Comprobracion de que todos los campos han sido introducidos
     if (!nombre || !email || !password) {
-      res.render("auth/signup", { errorMessage: "Los campos username, email y contraseña son obligatorios" })
+      res.render("auth/signup", {
+        errorMessage: "Los campos username, email y contraseña son obligatorios"
+      })
       return
     }
     //Validacion password fuerte front-end 
@@ -54,7 +69,11 @@ router.post("/signup", async (req, res, next) => {
     // Encriptacion de la password
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
-    const usuario = await Usuario.create({ nombre: nombre, email: email, passwordHash: hashedPassword })
+    const usuario = await Usuario.create({
+      nombre: nombre,
+      email: email,
+      passwordHash: hashedPassword
+    })
     req.session.currentUser = usuario;
     let transporter = await nodemailer.createTransport({
       host: "smtp.eu.mailgun.org",
@@ -75,12 +94,12 @@ router.post("/signup", async (req, res, next) => {
       <p>Ahora podrás introducir tu carta o menú del dia y mostrarlo a tus clientes de manera inmediata.</p>
       <br/>
       <p>100% higienico y rapido!</p>
-      <img src="/images/mymenu.png" alt="logo Mymenu">
+      <img src="https://res.cloudinary.com/dtkvfvtev/image/upload/v1593548914/mymenu_lchxqn.png" alt="logo Mymenu">
       `
-      
+
     }, (err, info) => {
       console.log(err);
-  });
+    });
 
     res.redirect("/user-Profile")
   } catch (error) {
@@ -105,14 +124,19 @@ router.get('/login', (req, res) => res.render('auth/login'))
 
 //Ruta POST inicio sesion
 router.post('/login', async (req, res, next) => {
-  const { email, password } = req.body;
+  const {
+    email,
+    password
+  } = req.body;
   if (email === '' || password === '') {
     res.render('auth/login', {
       errorMessage: 'Por favor introduzca ambos campos para continuar'
     });
     return;
   }
-  const usuario = await Usuario.findOne({ email })
+  const usuario = await Usuario.findOne({
+    email
+  })
   if (!usuario) {
     res.render('auth/login', {
       errorMessage: 'Este Email no esta registrado, pruebe otro'
@@ -134,19 +158,17 @@ router.get("/auth/google", passport.authenticate("google", {
     "https://www.googleapis.com/auth/userinfo.profile",
     "https://www.googleapis.com/auth/userinfo.email"
   ]
-})
-);
-router.get("/auth/google/callback", 
-passport.authenticate("google", {
-  successRedirect: "/user-profile",
-  failureRedirect: "/login" // hacia dónde debe ir si falla?
+}));
+router.get("/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/user-profile",
+    failureRedirect: "/login" // hacia dónde debe ir si falla?
 
-})
+  })
 );
 
 //Ruta Facebook
-router.get('/auth/facebook', passport.authenticate('facebook',
-));
+router.get('/auth/facebook', passport.authenticate('facebook', ));
 
 router.get('/auth/facebook/callback',
   passport.authenticate('facebook', {
