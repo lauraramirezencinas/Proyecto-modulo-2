@@ -202,7 +202,15 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5%; }
+  margin-bottom: 5%;
+  border-bottom: 3px solid cornflowerblue; }
+
+.QrCard {
+  display: flex;
+  flex-direction: column; }
+
+.descargarCodigo {
+  text-align: center; }
 
 .restauranteCard {
   font-size: 80%;
@@ -217,11 +225,16 @@ footer {
   text-align: center; }
 
 #editButton {
+  width: 100%;
   border: 1px solid black; }
 
 #QRimg {
   max-width: 150px;
   max-height: 150px; }
+
+#gestionMenu {
+  width: 100%;
+  border: 1px solid black; }
 
 .modal-title {
   width: 100%;
@@ -536,6 +549,19 @@ footer {
     width: 80%; }
   #addRestaurantButton {
     width: 80%; }
+  #restauranteContainer {
+    margin-bottom: 50px;
+    align-items: center;
+    padding-bottom: 60px; }
+  .Qr {
+    align-items: center;
+    margin-bottom: 50px; }
+  #QRimg {
+    display: block;
+    margin: auto; }
+  .QrCard {
+    margin-top: 30px;
+    margin-bottom: 30px; }
   #errorImg {
     width: 100%; }
   #notFoundImg {
@@ -575,6 +601,14 @@ footer {
     display: block;
     margin: auto;
     margin-top: 5%; }
+  #addRestaurantButton {
+    width: 50%;
+    margin-bottom: 10%; }
+  #QRimg {
+    max-width: 100px; }
+  #cardLogo {
+    max-width: 200px;
+    height: auto; }
   #errorImg {
     width: 100%; }
   #notFoundImg {
