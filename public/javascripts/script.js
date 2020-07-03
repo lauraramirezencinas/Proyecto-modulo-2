@@ -32,7 +32,7 @@ $(document).ready(function () {
   //editar restaurante
   $(".button-name-editar").click(function (event) {
     let $this = $(this);
-    let $box = $this.parent();
+    let $box = $this.parent().parent().parent().parent();
     let nombre = $box.find(".card-title").text();
     let calle = $box.find(".calle-text").text();
     let numero = $box.find(".numero-text").text();
@@ -42,7 +42,7 @@ $(document).ready(function () {
     formulario.find("#calleRestauranteEdit").val(calle);
     formulario.find("#numeroRestauranteEdit").val(numero);
     formulario.find("#horarioRestauranteEdit").val(horario);
-    let id = $(this).parent().find(".id-editar").val();
+    let id = $(this).parent().parent().siblings().find(".id-editar").val();
     formulario.attr("action", `/api/restaurante/${id}/editar`);
   })
 
@@ -76,6 +76,8 @@ $(document).ready(function () {
     $(this).parent().find(".editar-elemento").removeClass("hidden");
     $(this).parent().find(".input-edit-elemento").removeClass("hidden");
     $(this).parent().find(".input-edit-element-precio").removeClass("hidden");
+    $(this).parent().find(".restaurant-delete").addClass("hidden");
+     
 
   })
 
