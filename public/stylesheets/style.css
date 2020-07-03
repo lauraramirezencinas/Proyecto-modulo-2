@@ -1,8 +1,11 @@
+@charset "UTF-8";
+@import url(‘https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap’);
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font-family: 'Roboto Mono', monospace !important; }
   body li {
     list-style: none; }
-  body h3, body h4 {
+  body h3,
+  body h4 {
     text-align: center; }
 
 #main-margin {
@@ -422,7 +425,9 @@ footer {
 #instructionsLine {
   text-align: center; }
 
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
   background-color: cornflowerblue !important;
   margin-bottom: 40px; }
 
@@ -512,7 +517,8 @@ footer {
   border-radius: 15px; }
 
 #prize {
-  text-align: end; }
+  text-align: end;
+  border-bottom: 3px solid cornflowerblue; }
 
 .menu-especial {
   width: 100%;
