@@ -67,21 +67,6 @@ h3, h4 {
   border-radius: 15px;
   margin-bottom: 2%; }
 
-#restauranteContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
-
-.restauranteCard {
-  font-size: 80%;
-  text-align: center;
-  width: 30%;
-  background-color: cornflowerblue;
-  padding: 3%;
-  border-radius: 15px;
-  margin-bottom: 2%; }
-
 footer {
   bottom: 0;
   width: 100%;
@@ -207,14 +192,56 @@ footer {
   margin-bottom: 3%; }
 
 #cardLogo {
-  max-height: 200px;
-  max-width: 200px; }
+  max-height: 300px;
+  max-width: 300px;
+  display: block;
+  margin: auto; }
 
 #logo-container {
   height: 200px;
   width: 250px;
   display: block;
   margin: auto; }
+
+#restauranteContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+  border-bottom: 3px solid cornflowerblue; }
+
+.QrCard {
+  display: flex;
+  flex-direction: column; }
+
+.descargarCodigo {
+  text-align: center; }
+
+.restauranteCard {
+  font-size: 80%;
+  text-align: center;
+  width: 30%;
+  background-color: cornflowerblue;
+  padding: 3%;
+  border-radius: 15px;
+  margin-bottom: 2%; }
+
+.nombreLogo {
+  text-align: center; }
+
+#editButton {
+  width: 100%;
+  border: 1px solid black; }
+
+#QRimg {
+  max-width: 150px;
+  max-height: 150px; }
+
+#gestionMenu {
+  width: 100%;
+  border: 1px solid black; }
 
 .modal-title {
   width: 100%;
@@ -529,6 +556,19 @@ footer {
     width: 80%; }
   #addRestaurantButton {
     width: 80%; }
+  #restauranteContainer {
+    margin-bottom: 50px;
+    align-items: center;
+    padding-bottom: 60px; }
+  .Qr {
+    align-items: center;
+    margin-bottom: 50px; }
+  #QRimg {
+    display: block;
+    margin: auto; }
+  .QrCard {
+    margin-top: 30px;
+    margin-bottom: 30px; }
   #errorImg {
     width: 100%; }
   #notFoundImg {
@@ -568,6 +608,14 @@ footer {
     display: block;
     margin: auto;
     margin-top: 5%; }
+  #addRestaurantButton {
+    width: 50%;
+    margin-bottom: 10%; }
+  #QRimg {
+    max-width: 100px; }
+  #cardLogo {
+    max-width: 200px;
+    height: auto; }
   #errorImg {
     width: 100%; }
   #notFoundImg {
