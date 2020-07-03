@@ -1,12 +1,14 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
- 
-li{
-  list-style: none;
-}
-h3, h4{
-  text-align: center;
-}
+
+  li {
+    list-style: none;
+  }
+
+  h3,
+  h4 {
+    text-align: center;
+  }
 }
 
 //HOME PAGE
@@ -26,7 +28,7 @@ h3, h4{
   outline: none;
 }
 
-#boton-inicio{
+#boton-inicio {
   color: white;
   text-decoration: none;
 }
@@ -35,7 +37,8 @@ h3, h4{
   border-radius: 0px !important;
 
 }
-.navbar-header{
+
+.navbar-header {
   margin-top: 10px;
 }
 
@@ -262,6 +265,7 @@ footer {
   margin: auto;
 
 }
+
 #restauranteContainer {
   width: 100%;
   display: flex;
@@ -272,11 +276,13 @@ footer {
   border-bottom: 3px solid cornflowerblue;
 
 }
+
 .QrCard {
   display: flex;
   flex-direction: column;
-  
+
 }
+
 .descargarCodigo {
 
   text-align: center;
@@ -291,17 +297,21 @@ footer {
   border-radius: 15px;
   margin-bottom: 2%;
 }
+
 .nombreLogo {
   text-align: center;
 }
+
 #editButton {
   width: 100%;
-border: 1px solid black;
+  border: 1px solid black;
 }
+
 #QRimg {
   max-width: 150px;
-  max-height:150px;
+  max-height: 150px;
 }
+
 #gestionMenu {
   width: 100%;
   border: 1px solid black;
@@ -398,7 +408,7 @@ border: 1px solid black;
   border-radius: 15px;
   padding-top: 2%;
   padding-bottom: 2%;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 .crudOpsContainer {
@@ -430,7 +440,8 @@ border: 1px solid black;
   padding: 10px;
   margin-left: 1%;
 }
-.createMenuButton{
+
+.createMenuButton {
   border-radius: 15px;
   color: white;
   background-color: #222;
@@ -442,11 +453,13 @@ border: 1px solid black;
   margin-bottom: 20px;
   width: 30%;
 }
+
 #deleteMenu {
   display: block;
   margin: auto;
   margin-bottom: 30px;
 }
+
 #nombreCategoria {
   margin-left: 20px;
   margin-right: 20px;
@@ -503,29 +516,36 @@ border: 1px solid black;
   margin-right: 20px;
   margin-left: 20px;
 }
+
 #instructions {
-  
+
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: auto;
   margin-top: 100px;
-  
+
 }
+
 .instructionsElement {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 30px;
 }
+
 .imgInstructions {
   margin-right: 20px;
 }
+
 #instructionsLine {
- text-align: center;
+  text-align: center;
 }
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
-  background-color:cornflowerblue !important ;
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+  background-color: cornflowerblue !important;
   margin-bottom: 40px;
 }
 
@@ -536,10 +556,12 @@ border: 1px solid black;
   background-color: cornflowerblue;
   margin-bottom: 60px;
 }
+
 #nombreMenu {
   margin-left: 20px;
   margin-right: 20px;
 }
+
 #elementoMenu {
   margin-right: 20px;
 }
@@ -553,6 +575,7 @@ border: 1px solid black;
   text-align: center;
   margin-bottom: 3%;
 }
+
 #precio {
   margin-right: 20px;
 }
@@ -587,6 +610,7 @@ border: 1px solid black;
 
   text-align: center;
 }
+
 #backtoMenu {
   border-radius: 15px;
   color: white;
@@ -724,11 +748,12 @@ border: 1px solid black;
     width: 90%;
     margin-bottom: 4%;
     font-size: 5vw;
-  } 
+  }
 
-.pinInput {
-  width: 30%;
-}
+  .pinInput {
+    width: 30%;
+  }
+
   #irMenu {
     margin-top: 5%;
     width: 30%;
@@ -773,23 +798,28 @@ border: 1px solid black;
   #addRestaurantButton {
     width: 80%;
   }
+
   #restauranteContainer {
     margin-bottom: 50px;
     align-items: center;
     padding-bottom: 60px;
   }
+
   .Qr {
     align-items: center;
     margin-bottom: 50px;
   }
+
   #QRimg {
     display: block;
     margin: auto;
   }
+
   .QrCard {
     margin-top: 30px;
     margin-bottom: 30px;
   }
+
   #restauranteContainer {
     display: flex;
     flex-direction: column;
@@ -800,10 +830,12 @@ border: 1px solid black;
     width: 90%;
     margin-bottom: 4%;
     font-size: 5vw;
-  } 
-  #infoRestaurante{
+  }
+
+  #infoRestaurante {
     padding-top: 70px;
   }
+
   #listing-container {
     width: 80%;
     padding: 10px;
@@ -819,39 +851,46 @@ border: 1px solid black;
     width: 100%;
   }
 
-//CREA MENU
+  //CREA MENU
   #center-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
   #elemento {
     display: block;
     margin: auto;
   }
+
   #price-element {
     display: block;
     margin: auto;
   }
+
   #precio {
     display: block;
-    margin: auto  ;
+    margin: auto;
   }
+
   #nombreMenu {
     display: block;
     margin: auto;
   }
+
   #elementoMenu {
     display: block;
     margin: auto;
   }
+
   .button {
     margin-top: 20px;
   }
+
   .createButton {
     margin-top: 20px;
   }
-  
+
 }
 
 
@@ -864,6 +903,7 @@ border: 1px solid black;
     font-size: 2vw;
     margin-bottom: 4%;
   }
+
   .homeCard h3 {
     font-size: 2vw;
   }
@@ -905,14 +945,17 @@ border: 1px solid black;
     margin: auto;
     margin-top: 5%;
   }
+
   // USER-PROFILE
   #addRestaurantButton {
     width: 50%;
     margin-bottom: 10%;
   }
+
   #QRimg {
     max-width: 100px;
   }
+
   #cardLogo {
     max-width: 200px;
     height: auto;
@@ -933,11 +976,12 @@ border: 1px solid black;
     margin-bottom: 4%;
   }
 
-  #infoRestaurante{
+  #infoRestaurante {
     padding-top: 70px;
   }
+
   // CREA MENU
- 
+
   #editionOptions-container {
     width: 100%;
     padding: 10%;
@@ -945,31 +989,33 @@ border: 1px solid black;
     padding-left: 3%;
     padding-right: 3%;
   }
+
   //EDITAR CATEGORIA
   #price-element {
     display: block;
     margin: auto;
   }
+
   #elemento {
     display: block;
     margin: auto;
   }
+
   .button {
     display: block;
     margin: auto;
     margin-top: 20px;
   }
+
   #edittingOptions-container {
     width: 100%;
     padding: 10%;
     font-size: 2vw;
     padding-left: 3%;
     padding-right: 3%;
-    
+
   }
-  
-  
+
+
 
 }
-
-

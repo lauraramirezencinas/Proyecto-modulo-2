@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
   console.log('IronGenerator JS imported successfully!');
@@ -59,8 +56,7 @@ $(document).ready(function () {
       $(this).parent().find(".inputPrecio").removeClass("hidden");
       $(this).parent().find(".labelInfoMenu").show();
       $(this).parent().find(".inputInfoMenu").removeClass("hidden");
-    }
-    else {
+    } else {
       $(this).parent().find(".labelNombreMenu").hide();
       $(this).parent().find(".inputNombreMenu").addClass("hidden");
       $(this).parent().find(".inputInfoMenu").addClass("hidden");
@@ -86,12 +82,14 @@ $(document).ready(function () {
 
   //CODIGO QR
 
-  $(".generarCodigo").each(function (event) { 
+  $(".generarCodigo").each(function (event) {
     let $this = $(this);
     let $box = $this.parent();
-    let cadena= $box.find(".item").val()
+    let cadena = $box.find(".item").val()
     $(".descargarCodigo").css("display", "inline-block");
-    QRCode.toDataURL(cadena, { errorCorrectionLevel: 'H' }, function (err, url) {
+    QRCode.toDataURL(cadena, {
+      errorCorrectionLevel: 'H'
+    }, function (err, url) {
       console.log(url);
       $box.find(".qr-img").removeClass("hidden").attr("src", url);
     });

@@ -1,11 +1,10 @@
-
 <div>
     {{> navBarPartial}}
 </div>
 <div id="main-margin">
 
-<!-- TITULO -->
-<h2 class="Title">Edita Categoria: <b>{{this.categoria.nombreCategoria}}</b></h2>
+    <!-- TITULO -->
+    <h2 class="Title">Edita Categoria: <b>{{this.categoria.nombreCategoria}}</b></h2>
 
 
 
@@ -17,14 +16,14 @@
             <button class="button" type="submit">Guardar</button>
         </form>
 
-        
+
         <!-- FORMULARIO EDITAR ELEMENTO MENU -->
         <form id="editElementPrice" action="/elemento" method="POST">
             <label id="elemento" for=""><b> Elemento:</b></label>
             <input class="input" type="text" id="elementoMenu" name="nombre">
 
             {{#if isCarta}}
-           
+
             <label for="" id="price-element"><b> Precio:</b></label>
             <input class="input" type="text" id="precio" name="precio">
             {{/if}}
@@ -42,8 +41,8 @@
                 <li id="crudElement">
                     <span class="elemento-nombre"><b> {{this.nombre}}</b></span>
                     <span class="elemento-precio"><b>{{this.precio}} €</b></span>
-                    
-                    </li>
+
+                </li>
 
                 <button class="btn button-elemento-editar" data-toggle="modal" data-target="#exampleModal"> Editar<i
                         class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
