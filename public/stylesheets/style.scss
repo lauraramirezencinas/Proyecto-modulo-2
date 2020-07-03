@@ -1,5 +1,6 @@
+@import url(‘https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap’);
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+   font-family: 'Roboto Mono', monospace !important;
 
   li {
     list-style: none;
@@ -657,7 +658,9 @@ footer {
 }
 
 #prize {
-  text-align: end
+  text-align: end;
+  border-bottom: 3px solid cornflowerblue;
+  
 }
 
 //DISPLAY MENU ESPECIAL

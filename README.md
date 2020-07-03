@@ -6,13 +6,13 @@ Alberto Correia-Laura Ramirez
 
 # Link to App:
 
-- use in mode mobile device at browser, iphone X prefere
+- https://app-mymenu.herokuapp.com/
 
 ## Description:
 
 Plataforma donde los locales que no dispongan de páginas web, puedan introducir y mostrar su menú de forma digital a sus clientes.
 
-En fase avanzada usaremos la plataforma para construir una herramienta de gestión para los locales, y contenidos extra a modo de red social para usuarios.
+
 
 ## User Stories:
 
@@ -26,8 +26,11 @@ En fase avanzada usaremos la plataforma para construir una herramienta de gesti�
 ## Backlog:
 
 -**Categorías**
-
 -**Código QR**
+-**Acceso con redes rededs sociales**
+-**Mail de bienvenida**
+-**Carga de logo**
+-**QR descargable**
 
 ## User profile:
 
@@ -46,7 +49,9 @@ En fase avanzada usaremos la plataforma para construir una herramienta de gesti�
 Usuario:
 - **Nombre: String**
 - **Email: String**
-- **Contraseña**
+- **ContraseñaHash**
+-**GoogleID**
+-**FacebookID**
 ```
 ```
 
@@ -56,9 +61,11 @@ Restaurante:
 - **Horario:**
 - **Menu:[Menus]:**
 - **Logo:**
+- **UserID**
 ```
 ```
 Menú:
+- **Tipo del menu**
 - **Nombre del menu: String**
 - **idRestaurante: String**,
 - **Menu:[ArrayDeElementosDeMenu]:**
@@ -90,9 +97,13 @@ KANBAN : https://trello.com/b/52ZhFMBf/proyecto
 ### Git
 
 The url to your repository and to your deployed project
-[Deploy Link]()
+
+https://github.com/CorreiaAlberto/Proyecto-modulo-2
+
+https://app-mymenu.herokuapp.com/
 
 ### Slides
 
 The url to your presentation slides
-[Slides Link](http://slides.com)
+
+https://docs.google.com/presentation/d/1eLXfhvO2l882Xik5QH5kcm-srDxpxMWzoRsluhUzxhA/edit?ts=5efcf0d0#slide=id.g8b92443d12_2_533
