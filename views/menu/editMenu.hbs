@@ -17,14 +17,15 @@
             <button class="button" type="submit">Guardar</button>
         </form>
 
-        <br>
+        
         <!-- FORMULARIO EDITAR ELEMENTO MENU -->
         <form id="editElementPrice" action="/elemento" method="POST">
             <label id="elemento" for=""><b> Elemento:</b></label>
             <input class="input" type="text" id="elementoMenu" name="nombre">
 
             {{#if isCarta}}
-            <label for="" id="price-element"><b> Precio</b></label>
+           
+            <label for="" id="price-element"><b> Precio:</b></label>
             <input class="input" type="text" id="precio" name="precio">
             {{/if}}
             <input class="input" type="hidden" id="categoria" name="idCategoria" value="{{this.categoria.id}}">
@@ -32,13 +33,17 @@
         </form>
     </div>
     <!-- ELEMENTOS MENU -->
+
+    {{#if elementosMenu}}
     <div id="listing-container">
         <ul id="edittingOptions-container">
             {{#each elementosMenu}}
             <div class="crudOpsContainer">
                 <li id="crudElement">
                     <span class="elemento-nombre"><b> {{this.nombre}}</b></span>
-                    <span class="elemento-precio"><b>{{this.precio}} €</b></span></li>
+                    <span class="elemento-precio"><b>{{this.precio}} €</b></span>
+                    
+                    </li>
 
                 <button class="btn button-elemento-editar" data-toggle="modal" data-target="#exampleModal"> Editar<i
                         class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -58,9 +63,13 @@
             </div>
             {{/each}}
         </ul>
+
     </div>
+    {{else}}
+    {{/if}}
+
     <!-- LINK VOLVER -->
     <div id="backLink">
-        <a href="/restaurante/{{categoria.idRestaurante}}">Volver a mis menús</a>
+        <a id="backtoMenu" href="/restaurante/{{categoria.idRestaurante}}?idmenu={{menu.id}}">Volver a mi menú</a>
     </div>
 </div>

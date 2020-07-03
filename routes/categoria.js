@@ -86,7 +86,8 @@ router.post('/restaurante/:id/borrar', async (req, res, next) => {
   try {
     const categoriaBorrada = await Categoria.findByIdAndRemove(req.params.id);
     const id = categoriaBorrada.idRestaurante;
-    res.redirect(`/restaurante/${id}`)
+    const idMenu= categoriaBorrada.idMenu;
+    res.redirect(`/restaurante/${id}?idmenu=${idMenu}`)
   } catch (err) {
     next(err)
   }
