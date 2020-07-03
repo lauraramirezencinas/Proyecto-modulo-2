@@ -662,6 +662,8 @@ footer {
   .homeCard {
     font-size: 2vw;
     margin-bottom: 4%; }
+  .homeCard h3 {
+    font-size: 2vw; }
   .irMenu {
     margin-top: 5%;
     width: 25%; }
