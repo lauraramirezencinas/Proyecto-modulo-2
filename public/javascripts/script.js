@@ -77,7 +77,7 @@ $(document).ready(function () {
     $(this).parent().find(".input-edit-elemento").removeClass("hidden");
     $(this).parent().find(".input-edit-element-precio").removeClass("hidden");
     $(this).parent().find(".restaurant-delete").addClass("hidden");
-     
+
 
   })
 
