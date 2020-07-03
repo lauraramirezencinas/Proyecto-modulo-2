@@ -1,11 +1,9 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-li {
-  list-style: none; }
-
-h3, h4 {
-  text-align: center; }
+  body li {
+    list-style: none; }
+  body h3, body h4 {
+    text-align: center; }
 
 #main-margin {
   width: 85%;
@@ -324,7 +322,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 2%;
+  margin-bottom: 30px;
   justify-content: space-around;
   border-bottom: 2px solid white; }
 
@@ -342,6 +340,28 @@ footer {
   border: none;
   padding: 10px;
   margin-left: 1%; }
+
+.createMenuButton {
+  border-radius: 15px;
+  color: white;
+  background-color: #222;
+  border: none;
+  padding: 10px;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 30%; }
+
+#deleteMenu {
+  display: block;
+  margin: auto;
+  margin-bottom: 30px; }
+
+#nombreCategoria {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px; }
 
 .input {
   border-radius: 15px;
@@ -385,7 +405,10 @@ footer {
 
 #instructions {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  margin-top: 100px; }
 
 .instructionsElement {
   display: flex;
@@ -396,18 +419,36 @@ footer {
 .imgInstructions {
   margin-right: 20px; }
 
+#instructionsLine {
+  text-align: center; }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+  background-color: cornflowerblue !important;
+  margin-bottom: 40px; }
+
 #editMenuTitle {
   width: 100%;
   text-align: center;
   background-color: cornflowerblue;
   margin-bottom: 60px; }
 
+#nombreMenu {
+  margin-left: 20px;
+  margin-right: 20px; }
+
+#elementoMenu {
+  margin-right: 20px; }
+
 #editName {
   text-align: center; }
 
 #editElementPrice {
+  margin-top: 20px;
   text-align: center;
   margin-bottom: 3%; }
+
+#precio {
+  margin-right: 20px; }
 
 #element-listing {
   display: flex;
@@ -433,6 +474,13 @@ footer {
 #backLink {
   text-align: center; }
 
+#backtoMenu {
+  border-radius: 15px;
+  color: white;
+  background-color: #222;
+  border: none;
+  padding: 15px; }
+
 .button {
   border-radius: 15px;
   color: white;
@@ -444,7 +492,7 @@ footer {
   margin-top: 7%; }
 
 #elemento {
-  margin-right: 90px;
+  margin-right: 110px;
   margin-bottom: 10%; }
 
 .container {
@@ -569,10 +617,6 @@ footer {
   .QrCard {
     margin-top: 30px;
     margin-bottom: 30px; }
-  #errorImg {
-    width: 100%; }
-  #notFoundImg {
-    width: 100%; }
   #restauranteContainer {
     display: flex;
     flex-direction: column;
@@ -582,7 +626,37 @@ footer {
     margin-bottom: 4%;
     font-size: 5vw; }
   #infoRestaurante {
-    padding-top: 70px; } }
+    padding-top: 70px; }
+  #listing-container {
+    width: 80%;
+    padding: 10px; }
+  #errorImg {
+    width: 100%; }
+  #notFoundImg {
+    width: 100%; }
+  #center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  #elemento {
+    display: block;
+    margin: auto; }
+  #price-element {
+    display: block;
+    margin: auto; }
+  #precio {
+    display: block;
+    margin: auto; }
+  #nombreMenu {
+    display: block;
+    margin: auto; }
+  #elementoMenu {
+    display: block;
+    margin: auto; }
+  .button {
+    margin-top: 20px; }
+  .createButton {
+    margin-top: 20px; } }
 
 @media (min-width: 426px) and (max-width: 768px) {
   .homeCard {
@@ -624,6 +698,28 @@ footer {
     font-size: 2vw;
     margin-bottom: 4%; }
   #infoRestaurante {
-    padding-top: 70px; } }
+    padding-top: 70px; }
+  #editionOptions-container {
+    width: 100%;
+    padding: 10%;
+    font-size: 2vw;
+    padding-left: 3%;
+    padding-right: 3%; }
+  #price-element {
+    display: block;
+    margin: auto; }
+  #elemento {
+    display: block;
+    margin: auto; }
+  .button {
+    display: block;
+    margin: auto;
+    margin-top: 20px; }
+  #edittingOptions-container {
+    width: 100%;
+    padding: 10%;
+    font-size: 2vw;
+    padding-left: 3%;
+    padding-right: 3%; } }
 
 /*# sourceMappingURL=style.css.map */
