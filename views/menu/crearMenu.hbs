@@ -61,6 +61,7 @@
   </form>
   {{/if}}
   <!-- LISTADO CATEGORIAS MENU -->
+  {{#if categorias}}
   <div id="listing-container">
     <ul id="editionOptions-container">
       {{#each categorias}}
@@ -74,6 +75,8 @@
       {{/each}}
     </ul>
   </div>
+  {{else}}
+  {{/if}}
 
   <!-- INSTRUCCIONES -->
   {{else}}
