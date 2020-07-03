@@ -40,8 +40,9 @@
             <div class="crudOpsContainer">
                 <li id="crudElement">
                     <span class="elemento-nombre"><b> {{this.nombre}}</b></span>
+                    {{#if ../isCarta}}
                     <span class="elemento-precio"><b>{{this.precio}} €</b></span>
-
+                      {{/if}}
                 </li>
 
                 <button class="btn button-elemento-editar" data-toggle="modal" data-target="#exampleModal"> Editar<i
