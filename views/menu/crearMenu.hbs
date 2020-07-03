@@ -1,60 +1,104 @@
 {{> navBarPartial}}
-<!-- TITULO -->
-<h2 class="Title">Crea tu Menu para el restaurante: {{ this.restaurante.nombre}}</h2>
-<!-- FORMULARIO SELECCIÓN TIPO MENU -->
+<div id="main-margin">
+
+  <!-- TITULO -->
+  <h2 class="Title">Crea tu Menu para el restaurante: <b> {{ this.restaurante.nombre}}</b></h2>
+  <!-- FORMULARIO SELECCIÓN TIPO MENU -->
 
 
-<form action="/tipomenu/{{restaurante.id}}/crear" method="post">
-  <label for="tipoMenu">Escoge</label>
-  <select id="tipoDeMenu" name="tipoDeMenu">
-    <option value="carta">Carta</option>
-    <option value="menu">Menu</option>
-  </select>
-  <label class="labelNombreMenu" for="nombreMenu">Nombre</label>
-  <input type="text" class="inputNombreMenu hidden" id="nombreMenu" name="nombreMenu">
-  <label for="precioMenu" class="labelPrecio">Precio</label>
-  <input type="text" id="precioMenu" class="inputPrecio hidden" name="precioMenu">
-  <label for="infoMenu" class="labelInfoMenu ">Información adicional</label>
-  <textarea type="text" id="infoMenu" class="inputInfoMenu hidden" name="infoMenu"></textarea>
-  <input type="submit">
-</form>
-
-<!-- SUBTITULO DEL MENU ESCOGIDO -->
-<ul class="nav nav-tabs nav-justified listaMenu">
-  {{#each menu}}
-  <li class=""><a href="/restaurante/{{this.idRestaurante}}?idmenu={{this.id}}">{{this.tipoDeMenu}}</a></li>
-  <form action="/tipodemenu/{{this.idRestaurante}}/borrar?idmenu={{this.id}}" method="POST">
-    <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
-  </form>
-  {{/each}}
-</ul>
-
-<!-- FORMULARIO EDITAR CATEGORIAS MENU -->
-{{#if idMenu}}
-<div id="form ">
-
-  <h2 class="subTitle">Crea tus categorias</h2>
-
-  <form id="menuCreate" action="/menu/{{restaurante.id}}/crear" method="POST">
-    <label for="nombreMenu">Nombre de la categoria</label>
-    <input type="text" id="nombreCategoria" name="nombreCategoria" />
-    <input type="hidden" id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}">
-    <input type="hidden" id="idMenutipo" name="idMenu" value="{{idMenu}}" />
-    <button type="submit">Guardar menu </button>
-  </form>
-</div>
-{{/if}}
-<!-- LISTADO CATEGORIAS MENU -->
-<div id="listing-container">
-  <ul>
-    {{#each categorias}}
-    <div class="crudOpsContainer">
-      <li id="menuName">{{this.nombreCategoria}}</li>
-      <a class="editLink" href="/menu/{{this._id}}/editar">Editar</a>
-      <form action="/restaurante/{{this._id}}/borrar" method="POST">
-        <button class="deleteButton" type="submit">Borrar</button>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form action="/tipomenu/{{restaurante.id}}/crear" method="post">
+        <label for="tipoMenu" class="tipoDeMenuEscoger">Escoge el tipo de Menú:</label>
+        <select id="tipoDeMenu" class="form-control tipoDeMenuEscoger" name="tipoDeMenu">
+          <option value="carta">Carta</option>
+          <option value="menu">Menu</option>
+        </select>
+        <label class="labelNombreMenu" for="nombreMenu tipoDeMenuEscoger">Nombre</label>
+        <input type="text" class=" form-control inputNombreMenu hidden" id="nombreMenu" name="nombreMenu">
+        <label for="precioMenu" class="labelPrecio tipoDeMenuEscoger">Precio</label>
+        <input type="text" id="precioMenu" class=" tipoDeMenuEscoger form-control inputPrecio hidden" name="precioMenu">
+        <label for="infoMenu" class="labelInfoMenu ">Información adicional</label>
+        <textarea type="text" id="infoMenu" class="inputInfoMenu form-control hidden" name="infoMenu"></textarea>
+        <input class="createMenuButton" type="submit" value="Crear">
       </form>
     </div>
+  </div>
+
+  {{#if menus}}
+  <!-- SUBTITULO DEL MENU ESCOGIDO -->
+
+  <ul class="nav nav-pills nav-justified listaMenu">
+    {{#each menus}}
+    <li class="{{#if this.seleccionado}}active{{/if}}"><a
+        href="/restaurante/{{this.idRestaurante}}?idmenu={{this.id}}">{{this.tipoDeMenu}}</a></li>
     {{/each}}
   </ul>
+
+  <!--  <h2 class="subTitle">Crea tus categorias</h2>-->
+  <!-- FORMULARIO EDITAR CATEGORIAS MENU -->
+  {{#if idMenu}}
+  <div id="categoryEdit-container" id="form ">
+
+    {{#if menuSeleccionado.isCarta}}
+    <h3>Carta</h3>
+    {{else}}
+    <h3>{{menuSeleccionado.nombreMenu}}</h3>
+    <h4>{{menuSeleccionado.precioMenu}}€</h4>
+    <h4>{{menuSeleccionado.infoMenu}}</h4>
+    {{/if}}
+
+    <form id="menuCreate" action="/menu/{{restaurante.id}}/crear" method="POST">
+      <label for="nombreMenu">Nombre de la categoria:</label>
+      <input class="input" type="text" id="nombreCategoria" name="nombreCategoria" />
+      <input type="hidden" id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}">
+      <input type="hidden" id="idMenutipo" name="idMenu" value="{{idMenu}}" />
+      <button class="createButton" type="submit">Crear categoría </button>
+    </form>
+  </div>
+  <form action="/tipodemenu/{{restaurante.id}}/borrar?idmenu={{idMenu}}" method="POST">
+    <button id="deleteMenu" class=" btn btn-danger restaurant-delete">BORRAR MENÚ <i class="fa fa-trash-o"></i></button>
+  </form>
+  {{/if}}
+  <!-- LISTADO CATEGORIAS MENU -->
+  {{#if categorias}}
+  <div id="listing-container">
+    <ul id="editionOptions-container">
+      {{#each categorias}}
+      <div class="crudOpsContainer">
+        <li id="menuName"><b> {{this.nombreCategoria}}</b></li>
+        <a class="editLink" href="/menu/{{this._id}}/editar"><b> Editar</b></a>
+        <form action="/restaurante/{{this._id}}/borrar" method="POST">
+          <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
+        </form>
+      </div>
+      {{/each}}
+    </ul>
+  </div>
+  {{else}}
+  {{/if}}
+
+  <!-- INSTRUCCIONES -->
+  {{else}}
+  <div>
+    <ul id="instructions">
+      <li class="instructionsElement">
+        <p id="instructionsLine"><img class="imgInstructions" src="/images/escoge.png" alt="">Escoge entre Carta o menú
+          cerrado</p>
+      </li>
+      <li class="instructionsElement">
+        <p id="instructionsLine"><img class="imgInstructions" src="/images/form.png" alt=""></p>Selecciona el nombre y
+        pon el precio. Puedes
+        añadir mas informacion en el campo "Informacion adicional"
+      </li>
+      <li class="instructionsElement">
+        <p id="instructionsLine"><img class="imgInstructions" src="/images/listo.png" alt="">Ya tienes disponible tu QR
+          y pin disponible
+          para que tus clientes vean el menú!!</p>
+      </li>
+    </ul>
+  </div>
+
+  {{/if}}
+
 </div>

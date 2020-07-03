@@ -1,22 +1,36 @@
- {{> navBarPartial}}
-<!-- TITULO -->
-<h2 class="Title">Inicio Sesión</h2>
-<!-- FORMULARIO DE INICIO DE SESION -->
-<div id="form">
-  
-  <form id="login-container" action="/login" method="POST">
-    <label class="loginElement" for="input-email">Email</label>
-    <input class="loginElement" type="email" id="input-email" name="email" placeholder="Introduzca su email" />
+{{> navBarPartial}}
+<div id="main-margin">
 
-    <label class="loginElement" for="input-password">Contraseña</label>
-    <input class="loginElement" type="password" name="password" id="input-password" placeholder="********" />
+  <!-- TITULO -->
+  <h2 class="Title">Inicio Sesión</h2>
+  <!-- FORMULARIO DE INICIO DE SESION -->
+  <div id="form">
 
-    <button class="Button" class="loginElement" type="submit">Inicio sesión</button>
+    <form id="login-container" action="/login" method="POST">
+      <label class="loginElement" for="input-email">Email:</label>
+      <input class="loginElement" type="email" id="input-email" name="email" placeholder="Introduzca su email" />
 
-   {{#if errorMessage}}
-    <div id="errorMessage">
-      <p class="error"><b> {{errorMessage}}</b></p>
-    </div>
-    {{/if}}
-  </form>
+      <label class="loginElement" for="input-password">Contraseña:</label>
+      <input class="loginElement" type="password" name="password" id="input-password" placeholder="********" />
+      {{#if errorMessage}}
+      <div id="errorMessage">
+        <p class="error"><b> {{errorMessage}}</b></p>
+      </div>
+      {{/if}}
+
+      <button class="Button" class="loginElement" type="submit">Inicio sesión</button>
+
+      <a id="googleButton" class="Button" href="/auth/google"><img id="fbLogo" src="/images/google.png" alt="google">
+        Accede con Google</a>
+      <a id="fbButton" class="Button" href="/auth/facebook"><img id="fbLogo" src="/images/facebook.png" alt="Fb"> Accede
+        con Facebook</a>
+    </form>
+  </div>
+
+
+
+</div>
+<div>
+  <img id="loginImg" src="/images/gente-comiendo-cafeterias-patio-comidas_74855-5284.jpg" alt="Imagen">
+</div>
 </div>

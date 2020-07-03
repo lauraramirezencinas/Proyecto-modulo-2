@@ -31,7 +31,7 @@ const restauranteSchema = new Schema({
 
   logoUrl: {
     type: String,
-    default: "https://res.cloudinary.com/dtkvfvtev/image/upload/v1593243674/test-folder/logo_default_nyltu1.png"
+    default: "https://res.cloudinary.com/dtkvfvtev/image/upload/v1593469937/logotipo-restaurante_23-2148558726_ebzwhz.jpg"
   },
 
   userId: {
