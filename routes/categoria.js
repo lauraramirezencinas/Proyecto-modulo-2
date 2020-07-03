@@ -16,26 +16,26 @@ router.get('/restaurante/:id', async (req, res, next) => {
 
   let categorias = null;
   let idMenu = req.query.idmenu;
-  for (let i =0;i<menus.length;i++){
-    if (menus[i]._id == idMenu){
-      menus[i].seleccionado =true;
-    } else{
-      menus[i].seleccionado =false;
+  for (let i = 0; i < menus.length; i++) {
+    if (menus[i]._id == idMenu) {
+      menus[i].seleccionado = true;
+    } else {
+      menus[i].seleccionado = false;
     }
   }
-  let menuSeleccionado=null;
+  let menuSeleccionado = null;
   if (typeof (idMenu) !== "undefined") {
     categorias = await Categoria.find({
       idMenu: idMenu
     });
-    menuSeleccionado= await Menu.findById(idMenu);
-    menuSeleccionado.isCarta = menuSeleccionado.tipoDeMenu =="carta";
+    menuSeleccionado = await Menu.findById(idMenu);
+    menuSeleccionado.isCarta = menuSeleccionado.tipoDeMenu == "carta";
   }
 
   res.render('menu/crearMenu', {
     categorias: categorias,
     menus: menus,
-    menuSeleccionado:menuSeleccionado,
+    menuSeleccionado: menuSeleccionado,
     restaurante: restaurante,
     idMenu: idMenu
 
@@ -86,7 +86,8 @@ router.post('/restaurante/:id/borrar', async (req, res, next) => {
   try {
     const categoriaBorrada = await Categoria.findByIdAndRemove(req.params.id);
     const id = categoriaBorrada.idRestaurante;
-    res.redirect(`/restaurante/${id}`)
+    const idMenu = categoriaBorrada.idMenu;
+    res.redirect(`/restaurante/${id}?idmenu=${idMenu}`)
   } catch (err) {
     next(err)
   }

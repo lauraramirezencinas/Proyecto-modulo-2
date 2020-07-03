@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
   console.log('IronGenerator JS imported successfully!');
@@ -27,7 +24,7 @@ $(document).ready(function () {
     $(this).parent().find(".menu-container1").toggleClass("hidden");
   });
 
-  $("#menu-especial").click(function (event) {
+  $(".menu-especial").click(function (event) {
     $(this).parent().find(".menu-container").toggleClass("hidden");
   });
 
@@ -35,7 +32,7 @@ $(document).ready(function () {
   //editar restaurante
   $(".button-name-editar").click(function (event) {
     let $this = $(this);
-    let $box = $this.parent();
+    let $box = $this.parent().parent().parent().parent();
     let nombre = $box.find(".card-title").text();
     let calle = $box.find(".calle-text").text();
     let numero = $box.find(".numero-text").text();
@@ -45,7 +42,7 @@ $(document).ready(function () {
     formulario.find("#calleRestauranteEdit").val(calle);
     formulario.find("#numeroRestauranteEdit").val(numero);
     formulario.find("#horarioRestauranteEdit").val(horario);
-    let id = $(this).parent().find(".id-editar").val();
+    let id = $(this).parent().parent().siblings().find(".id-editar").val();
     formulario.attr("action", `/api/restaurante/${id}/editar`);
   })
 
@@ -59,8 +56,7 @@ $(document).ready(function () {
       $(this).parent().find(".inputPrecio").removeClass("hidden");
       $(this).parent().find(".labelInfoMenu").show();
       $(this).parent().find(".inputInfoMenu").removeClass("hidden");
-    }
-    else {
+    } else {
       $(this).parent().find(".labelNombreMenu").hide();
       $(this).parent().find(".inputNombreMenu").addClass("hidden");
       $(this).parent().find(".inputInfoMenu").addClass("hidden");
@@ -80,18 +76,22 @@ $(document).ready(function () {
     $(this).parent().find(".editar-elemento").removeClass("hidden");
     $(this).parent().find(".input-edit-elemento").removeClass("hidden");
     $(this).parent().find(".input-edit-element-precio").removeClass("hidden");
+    $(this).parent().find(".restaurant-delete").addClass("hidden");
+
 
   })
 
 
   //CODIGO QR
 
-  $(".generarCodigo").each(function (event) { 
+  $(".generarCodigo").each(function (event) {
     let $this = $(this);
     let $box = $this.parent();
-    let cadena= $box.find(".item").val()
+    let cadena = $box.find(".item").val()
     $(".descargarCodigo").css("display", "inline-block");
-    QRCode.toDataURL(cadena, { errorCorrectionLevel: 'H' }, function (err, url) {
+    QRCode.toDataURL(cadena, {
+      errorCorrectionLevel: 'H'
+    }, function (err, url) {
       console.log(url);
       $box.find(".qr-img").removeClass("hidden").attr("src", url);
     });
