@@ -78,21 +78,19 @@
         </div>
         <!--BLOQUE CARD BOTONES -->
         <div id="restauranteCard" class="cardBotones">
-          <div class="col-xs-12">
-            <a id="gestionMenu" href="/restaurante/{{this.id}}" class="btn btn-primary">Gestionar Menús</a>
-            <input class="id-editar hidden" value="{{this.id}}">
-          </div>
-          <div>
-            <div class="col-xs-6">
-              <button id="editButton" class="btn button-name-editar" data-toggle="modal"
-                data-target="#exampleModal">Editar <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-            </div>
-            <div class="col-xs-6">
-              <form action="/api/restaurante/{{this.id}}/borrar" method="POST">
-                <button class=" btn btn-danger restaurant-delete">Borrar <i class="fa fa-trash-o"></i></button>
-              </form>
-            </div>
-          </div>
+
+          <a id="gestionMenu" href="/restaurante/{{this.id}}" class="btn btn-primary margin-button">Gestionar Menús</a>
+          <input class="id-editar hidden" value="{{this.id}}">
+
+
+          <button id="editButton" class="btn button-name-editar btn-block margin-button" data-toggle="modal"
+            data-target="#exampleModal">Editar <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+          <form action="/api/restaurante/{{this.id}}/borrar" method="POST">
+            <button class=" btn btn-danger btn-block restaurant-delete margin-button">Borrar <i class="fa fa-trash-o"></i></button>
+          </form>
+
+
         </div>
 
       </div>

@@ -2,17 +2,25 @@
 <div id="main-margin">
 
     <!-- TITULO-->
-    <h1 class="Title"><b> Bienvenido a {{title}}</b> <img id="logoMymenu" src="/images/mymenu.svg" alt=""> </h1>
+    <h1 class="Title"> <img id="logoMymenu" src="/images/mymenu.svg" alt=""> </h1>
 
     <!-- FORM PIN-->
     <div class="pinSearch">
-        <label for="input-password">Busca por pin</label>
-        <input type="number" class="pinInput" id="pin" name="pin" placeholder="****" />
-        {{#if errorMessage}}
-        <p id="errorMessage"><b> {{errorMessage}}</b></p>
-        {{/if}}
+        <div>
+            <label for="input-password" class="pinbusqueda">Introduce tu PIN</label>
+        </div>
+        <div>
+            <input type="number" class="pinInput" id="pin" name="pin" placeholder="****" />
+            {{#if errorMessage}}
+            <p id="errorMessage"><b> {{errorMessage}}</b></p>
+            {{/if}}
+        </div>
+        <div>
+            <button class="irMenu" id="irMenu">IR AL MENU</button>
+        </div>
 
-        <button class="irMenu" id="irMenu">IR AL MENU</button>
+
+
 
     </div>
 
@@ -49,8 +57,6 @@
 
 </div>
 <!-- FOOTER -->
-<footer>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a
-        href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
-    <br>
-    Logo diseñado por el gran Robert!!
+<footer>  © Copyrights MyMenu 
+    
 </footer>

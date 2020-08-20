@@ -28,7 +28,8 @@ $(document).ready(function () {
     $(this).parent().find(".menu-container").toggleClass("hidden");
   });
 
-
+  $(".pinInput").focus()
+  
   //editar restaurante
   $(".button-name-editar").click(function (event) {
     let $this = $(this);
